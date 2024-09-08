@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-// import "./screens/globals.css"; // Ensure your CSS file is correctly imported
-// import './styles/globals.css'
 import ManageContacts from "./screens/ManageContacts";
 import Home from "./screens/Home";
 import Trips from "./screens/Trips";
