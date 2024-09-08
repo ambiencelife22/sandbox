@@ -1,0 +1,50 @@
+{
+  "supplierDetails": [
+    {
+      "industryType": "Hotel",
+      "parentBrand": "Aman",
+      "hotelName": "Amanyara",
+      "website": "https://www.aman.com/resorts/amanyara", 
+      "address": "Northwest Point",
+      "city": "Providenciales",
+      "state": "",
+      "zipCode": "TKCA 1ZZ",
+      "country": "Turks and Caicos Islands",
+      "mainPhone": "+1 649 941 8133",
+      "reservationsPhone": "+1 649 941 5770",
+      "mainEmail": "amanyara@aman.com",
+      "reservationsEmail": "reservations@aman.com",
+      "salesEmail": "",
+      "conciergeEmail": "",
+      "guestRelationsEmail": "amanyara.guestrelations@aman.com",
+      "frontOfficeEmail": "amanyarafo@aman.com",
+      "publicKey": ""
+    },
+    {
+      "industryType": "Hotel",
+      "parentBrand": "Aman",
+      "hotelName": "Amankila",
+      "website": "https://www.aman.com/resorts/amankila",    
+      "address": "Manggis",
+      "city": "Bali",
+      "state": "",
+      "zipCode": "",
+      "country": "Indonesia",
+      "mainPhone": "+62 363 41333",
+      "reservationsPhone": "+62 361 84 68585",
+      "mainEmail": "amankila@aman.com",
+      "reservationsEmail": "reservations@aman.com",
+      "salesEmail": "",
+      "conciergeEmail": "",
+      "guestRelationsEmail": "",
+      "frontOfficeEmail": "",
+      "publicKey": ""
+    },
+
+    {
+      "industryType": "Restaurant",
+      "parentBrand": "Aman",
+      "hotelName": "Aman Restaurant"
+    }
+  ]
+}
