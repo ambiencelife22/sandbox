@@ -1,6 +1,7 @@
-
 import { useState, useEffect } from "react";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css"
+import AddSupplierForm from "../../components/AddNewSupplier";
 
 const HomePage = () => {
   const [selectedTab, setSelectedTab] = useState<"Global" | "Local">("Global");
@@ -19,7 +20,12 @@ const HomePage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch data based on selected tab
+  const [isAddingSupplier, setIsAddingSupplier] = useState(false); // State for showing AddNewSupplier
+
+  const handleAddNewSupplierClick = () => {
+    setIsAddingSupplier(true); // Set to true when the button is clicked
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -63,7 +69,7 @@ const HomePage = () => {
     fetchData();
   }, [selectedTab]);
 
-  // Filterign data based on selected sub-tab and brand
+  // Filtering data based on selected sub-tab and brand
   useEffect(() => {
     const filterData = (
       supplierDetails: any,
@@ -80,7 +86,7 @@ const HomePage = () => {
       const filtered = filterData(data, "Dining", selectedBrandRestaurant);
       setFilteredData(filtered);
     } else {
-      setFilteredData([]); 
+      setFilteredData([]);
     }
   }, [selectedSubTab, selectedBrandHotel, selectedBrandRestaurant, data]);
 
@@ -97,7 +103,11 @@ const HomePage = () => {
       <nav className={styles.nav}>
         <button
           className={selectedTab === "Global" ? styles.active : ""}
-          onClick={() => setSelectedTab("Global")}
+          onClick={() => {
+            setSelectedTab("Global");
+
+            setIsAddingSupplier(false);
+          }}
         >
           Global Suppliers
         </button>
@@ -108,85 +118,106 @@ const HomePage = () => {
           Local Suppliers
         </button>
       </nav>
+      {isAddingSupplier ? (
+        <AddSupplierForm />
+      ) : (
+        <>
+          <div className="localSuppliers_tabs">
+            <nav className={styles.subNav}>
+              <button
+                className={selectedSubTab === "Hotel" ? styles.active : ""}
+                onClick={() => setSelectedSubTab("Hotel")}
+              >
+                Hotels
+              </button>
+              <button
+                className={selectedSubTab === "Restaurant" ? styles.active : ""}
+                onClick={() => setSelectedSubTab("Restaurant")}
+              >
+                Restaurants
+              </button>
+            </nav>
 
-      <nav className={styles.subNav}>
-        <button
-          className={selectedSubTab === "Hotel" ? styles.active : ""}
-          onClick={() => setSelectedSubTab("Hotel")}
-        >
-          Hotels
-        </button>
-        <button
-          className={selectedSubTab === "Restaurant" ? styles.active : ""}
-          onClick={() => setSelectedSubTab("Restaurant")}
-        >
-          Restaurants
-        </button>
-      </nav>
-
-      <div style={{ marginTop: "20px" }}>
-        <select
-          value={
-            selectedSubTab === "Hotel"
-              ? selectedBrandHotel
-              : selectedBrandRestaurant
-          }
-          onChange={(e) =>
-            selectedSubTab === "Hotel"
-              ? setSelectedBrandHotel(e.target.value)
-              : setSelectedBrandRestaurant(e.target.value)
-          }
-        >
-          <option value="">
-            {selectedSubTab === "Hotel"
-              ? "Select a hotel"
-              : "Select a restaurant"}
-          </option>
-          {(selectedSubTab === "Hotel" ? brands.Hotel : brands.Restaurant).map(
-            (brand) => (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            )
-          )}
-        </select>
-      </div>
-
-      <div style={{ marginTop: "20px" }}>
-        {Array.isArray(filteredData) &&
-          filteredData.length === 0 &&
-          (selectedBrandHotel || selectedBrandRestaurant) && (
-            <p>
-              No {selectedSubTab.toLowerCase()}s found for the selected brand.
-            </p>
-          )}
-        {Array.isArray(filteredData) &&
-          filteredData.map((item, index) => (
-            <div key={index}>
-              <h3 className="parent_brand_name">
-                {item.supplierName || item.officialCorporateName}
-              </h3>
-
-              <p>
-                Website:
-                <a
-                  className="parent_brand_a"
-                  href={item.supplierWebsite || item.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
+            {selectedTab === "Local" && (
+              <div className={styles.subNav}>
+                <button
+                  className={styles.addNewButton}
+                  onClick={handleAddNewSupplierClick} // Show AddNewSupplier on click
                 >
-                  {item.supplierWebsite || item.website}
-                </a>
-              </p>
-              <p>
-                Address: {item.supplierAddress || item.corporateAddr},{" "}
-                {item.supplierCity || item.corporateCity}
-              </p>
-              <p>Phone: {item.supplierPhone || item.corporatePhone}</p>
-              <p>Email: {item.supplierMainEmail || item.corporateMainEmail}</p>
-            </div>
-          ))}
-      </div>
+                  + Add New Supplier
+                </button>
+              </div>
+            )}
+          </div>
+          <div style={{ marginTop: "20px" }}>
+            <select
+              value={
+                selectedSubTab === "Hotel"
+                  ? selectedBrandHotel
+                  : selectedBrandRestaurant
+              }
+              onChange={(e) =>
+                selectedSubTab === "Hotel"
+                  ? setSelectedBrandHotel(e.target.value)
+                  : setSelectedBrandRestaurant(e.target.value)
+              }
+            >
+              <option value="">
+                {selectedSubTab === "Hotel"
+                  ? "Select a hotel"
+                  : "Select a restaurant"}
+              </option>
+              {(selectedSubTab === "Hotel"
+                ? brands.Hotel
+                : brands.Restaurant
+              ).map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ marginTop: "20px" }}>
+            {Array.isArray(filteredData) &&
+              filteredData.length === 0 &&
+              (selectedBrandHotel || selectedBrandRestaurant) && (
+                <p>
+                  No {selectedSubTab.toLowerCase()}s found for the selected
+                  brand.
+                </p>
+              )}
+            {Array.isArray(filteredData) &&
+              filteredData.map((item, index) => (
+                <div key={index}>
+                  <h3 className="parent_brand_name">
+                    {item.supplierName || item.officialCorporateName}
+                  </h3>
+
+                  <p>
+                    Website:
+                    <a
+                      className="parent_brand_a"
+                      href={item.supplierWebsite || item.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.supplierWebsite || item.website}
+                    </a>
+                  </p>
+                  <p>
+                    Address: {item.supplierAddress || item.corporateAddr},{" "}
+                    {item.supplierCity || item.corporateCity}
+                  </p>
+                  <p>Phone: {item.supplierPhone || item.corporatePhone}</p>
+                  <p>
+                    Email: {item.supplierMainEmail || item.corporateMainEmail}
+                  </p>
+                </div>
+              ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

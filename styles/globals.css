@@ -162,3 +162,12 @@ html {
   color: #650071;
 
 }
+
+.localSuppliers_tabs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
