@@ -246,7 +246,6 @@
 .custom_local_supplier_form {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   width: 40%;
 }

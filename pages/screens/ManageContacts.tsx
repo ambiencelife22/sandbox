@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import styles from "../styles/Home.module.css";
-import styles from "../../styles/Home.module.css"
+import styles from "../../styles/Home.module.css";
 import AddSupplierForm from "../../components/AddNewSupplier";
 
 const HomePage = () => {
@@ -19,11 +19,10 @@ const HomePage = () => {
   const [filteredData, setFilteredData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  const [isAddingSupplier, setIsAddingSupplier] = useState(false); // State for showing AddNewSupplier
+  const [isAddingSupplier, setIsAddingSupplier] = useState(false);
 
   const handleAddNewSupplierClick = () => {
-    setIsAddingSupplier(true); // Set to true when the button is clicked
+    setIsAddingSupplier(true);
   };
 
   useEffect(() => {
@@ -32,8 +31,8 @@ const HomePage = () => {
       try {
         const url =
           selectedTab === "Global"
-            ? "https://ambiencelife-api-us.com/v1/api/view/all/globalbrands"
-            : "https://ambiencelife-api-us.com/v1/api/view/all/industrysuppliers";
+            ? "https://ambiencelife-api-us.com/v1/api/travel/global/brands"
+            : "https://ambiencelife-api-us.com/v1/api/travel/industry/suppliers";
 
         const response = await fetch(url);
         if (!response.ok) {
@@ -43,24 +42,55 @@ const HomePage = () => {
         console.log("API Response:", result); // Log the response to inspect the structure
 
         if (selectedTab === "Global") {
-          // Extract brands for Global Suppliers
-          const suppliers = result.globalSuppliers.supplierType || {};
-          const hotelBrands = Object.keys(suppliers["Hotel / Resort"] || {});
-          const restaurantBrands = Object.keys(suppliers["Dining"] || {});
+          // Extract unique parent brands for Global Suppliers
+          const suppliers = result.data || [];
+          const hotelBrands = Array.from(
+            new Set(
+              suppliers
+                .filter(
+                  (supplier) => supplier.industry_type === "Hotel / Resort"
+                )
+                .map((supplier) => supplier.parent_brand)
+            )
+          );
+          const restaurantBrands = Array.from(
+            new Set(
+              suppliers
+                .filter((supplier) => supplier.industry_type === "Dining")
+                .map((supplier) => supplier.parent_brand)
+            )
+          );
+
           setBrands({ Hotel: hotelBrands, Restaurant: restaurantBrands });
           setData(suppliers);
-        } else {
-          // Extract brands for Local Suppliers
-          const suppliers = result.industrySuppliers?.supplierType || {};
-          const hotelBrands = Object.keys(suppliers["Hotel / Resort"] || {});
-          const restaurantBrands = Object.keys(suppliers["Dining"] || {});
+        } 
+        
+        else {
+          const suppliers = result.data || [];
+          const hotelBrands = Array.from(
+            new Set(
+              suppliers
+                .filter(
+                  (supplier) => supplier.industry_type === "Hotel / Resort"
+                )
+                .map((supplier) => supplier.parent_brand)
+            )
+          );
+          const restaurantBrands = Array.from(
+            new Set(
+              suppliers
+                .filter((supplier) => supplier.industry_type === "Dining")
+                .map((supplier) => supplier.parent_brand)
+            )
+          );
+
           setBrands({ Hotel: hotelBrands, Restaurant: restaurantBrands });
           setData(suppliers);
         }
 
         setLoading(false);
       } catch (error) {
-        console.error("Fetch error:", error); // Log the error for debugging
+        console.error("Fetch error:", error);
         setError("Failed to load data");
         setLoading(false);
       }
@@ -69,21 +99,28 @@ const HomePage = () => {
     fetchData();
   }, [selectedTab]);
 
-  // Filtering data based on selected sub-tab and brand
   useEffect(() => {
-    const filterData = (
-      supplierDetails: any,
-      industryType: string,
-      selectedBrand: string
-    ) => {
-      return (supplierDetails[industryType]?.[selectedBrand] || []) as any[];
+    const filterDataByBrand = (suppliers, selectedBrand, industryType) => {
+      return suppliers.filter(
+        (supplier) =>
+          supplier.parent_brand === selectedBrand &&
+          supplier.industry_type === industryType
+      );
     };
 
     if (selectedSubTab === "Hotel" && selectedBrandHotel) {
-      const filtered = filterData(data, "Hotel / Resort", selectedBrandHotel);
+      const filtered = filterDataByBrand(
+        data,
+        selectedBrandHotel,
+        "Hotel / Resort"
+      );
       setFilteredData(filtered);
     } else if (selectedSubTab === "Restaurant" && selectedBrandRestaurant) {
-      const filtered = filterData(data, "Dining", selectedBrandRestaurant);
+      const filtered = filterDataByBrand(
+        data,
+        selectedBrandRestaurant,
+        "Dining"
+      );
       setFilteredData(filtered);
     } else {
       setFilteredData([]);
@@ -191,14 +228,14 @@ const HomePage = () => {
               filteredData.map((item, index) => (
                 <div key={index}>
                   <h3 className="parent_brand_name">
-                    {item.supplierName || item.officialCorporateName}
+                    {item.official_corporate_name || item.supplier_name}
                   </h3>
 
                   <p>
                     Website:
                     <a
                       className="parent_brand_a"
-                      href={item.supplierWebsite || item.website}
+                      href={item.supplierWebsite || item.supplier_website}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -206,12 +243,14 @@ const HomePage = () => {
                     </a>
                   </p>
                   <p>
-                    Address: {item.supplierAddress || item.corporateAddr},{" "}
-                    {item.supplierCity || item.corporateCity}
+                    Address: {item.corporate_address || item.supplier_address},{" "}
+                    {""}
+                    {item.corporate_city || item.supplier_city}
                   </p>
-                  <p>Phone: {item.supplierPhone || item.corporatePhone}</p>
+                  <p>Phone: {item.corporate_phone || item.supplier_phone}</p>
                   <p>
-                    Email: {item.supplierMainEmail || item.corporateMainEmail}
+                    Email:{" "}
+                    {item.corporate_sales_email || item.supplier_main_email}
                   </p>
                 </div>
               ))}

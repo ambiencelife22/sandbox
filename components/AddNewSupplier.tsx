@@ -10,8 +10,7 @@ export default function AddSupplierForm() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [website, setWebsite] = useState("");
-  
-  
+
   useEffect(() => {
     fetch("https://ambiencelife-api-us.com/v1/api/travel/destinations/filter")
       .then((response) => response.json())
@@ -40,7 +39,6 @@ export default function AddSupplierForm() {
     const selectedKey = e.target.value;
     setSelectedSubcontinent(selectedKey);
     setSelectedCity("");
-    // Filtering cities based on selected subcontinent key
     const filtered = cities.filter(
       (city: any) => city.subcontinent.subcontinent_key === selectedKey
     );
