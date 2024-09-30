@@ -39,10 +39,9 @@ const HomePage = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        console.log("API Response:", result); // Log the response to inspect the structure
+        console.log("API Response:", result);
 
         if (selectedTab === "Global") {
-          // Extract unique parent brands for Global Suppliers
           const suppliers = result.data || [];
           const hotelBrands = Array.from(
             new Set(
@@ -63,9 +62,7 @@ const HomePage = () => {
 
           setBrands({ Hotel: hotelBrands, Restaurant: restaurantBrands });
           setData(suppliers);
-        } 
-        
-        else {
+        } else {
           const suppliers = result.data || [];
           const hotelBrands = Array.from(
             new Set(
@@ -179,7 +176,7 @@ const HomePage = () => {
               <div className={styles.subNav}>
                 <button
                   className={styles.addNewButton}
-                  onClick={handleAddNewSupplierClick} // Show AddNewSupplier on click
+                  onClick={handleAddNewSupplierClick}
                 >
                   + Add New Supplier
                 </button>
