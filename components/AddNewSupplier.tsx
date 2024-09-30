@@ -81,7 +81,7 @@ export default function AddSupplierForm() {
               type="text"
               value={contactType}
               onChange={(e) => setContactType(e.target.value)}
-              placeholder="Enter Website"
+              placeholder="Enter Contact Type"
               style={{
                 padding: "10px",
                 marginBottom: "15px",
@@ -98,7 +98,7 @@ export default function AddSupplierForm() {
               type="text"
               value={market}
               onChange={(e) => setMarket(e.target.value)}
-              placeholder="Enter Website"
+              placeholder="Enter Market"
               style={{
                 padding: "10px",
                 marginBottom: "15px",
@@ -115,7 +115,7 @@ export default function AddSupplierForm() {
               type="text"
               value={contactFiles}
               onChange={(e) => setContactFiles(e.target.value)}
-              placeholder="Enter Website"
+              placeholder="Enter Contact Files"
               style={{
                 padding: "10px",
                 marginBottom: "15px",
@@ -132,7 +132,7 @@ export default function AddSupplierForm() {
               type="text"
               value={contactCreator}
               onChange={(e) => setContactCreator(e.target.value)}
-              placeholder="Enter Website"
+              placeholder="Enter Contact Creator"
               style={{
                 padding: "10px",
                 marginBottom: "15px",
@@ -149,7 +149,7 @@ export default function AddSupplierForm() {
               type="text"
               value={publicKey}
               onChange={(e) => setPublicKey(e.target.value)}
-              placeholder="Enter Website"
+              placeholder="Enter Public Key"
               style={{
                 padding: "10px",
                 marginBottom: "15px",
