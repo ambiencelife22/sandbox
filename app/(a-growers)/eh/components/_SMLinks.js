@@ -1,0 +1,1 @@
+export const TELEGRAM_IMAGE = 'https://firebasestorage.googleapis.com/v0/b/ambiencelife.appspot.com/o/images%2Fimages_global%2Fsocial_media%2Ftelegram.webp?alt=media&token=6940cf3a-a7ca-441e-a826-1b41232df862'
