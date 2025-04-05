@@ -2,7 +2,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 
-import { XternalLinkIcon } from '@/app/(icons)/XternalLinkIcon'
+import { XternalLinkIcon } from '../../../(icons)/XternalLinkIcon'
 
 import { motion } from 'framer-motion'
 

@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react'
 
-import FunctionLost404 from '@/pages/lost404'
+import FunctionLost404 from '../../../pages/lost404'
 
 export default function GrowersGeneralError({
     error,
