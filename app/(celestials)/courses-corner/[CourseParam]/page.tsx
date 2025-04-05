@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 // @@ Import feature provider
 import { CourseProvider } from '../../../../utils/(contexts)/CoursesContext'
@@ -41,8 +42,9 @@ function CoursePage() {
 
   const [courseNotFound, setCourseNotFound] = useState(false)
 
-  const pathParts = window.location.pathname.split('/')
-  const courseUrl = `/${pathParts[pathParts.length - 1]}`
+  const pathname = usePathname()
+const pathParts = pathname.split('/')
+const courseUrl = `/${pathParts[pathParts.length - 1]}`
   
 
   const handleNextClick = () => {

@@ -10,9 +10,9 @@ import BrickContainer from './components/_BrickContainer'
 import BrickNebula from './components/_BrickNebula' 
 
 // @@ Import external ux functions @@
-import BrickAppIntro from '@/app/(a-growers)/components/_BrickAppIntro'
+import BrickAppIntro from '../../(a-growers)/components/_BrickAppIntro'
 
-import { XCLUSIVES_IMAGE, LIFEDESIGN_IMAGE, FREEBIES_IMAGE } from '@/app/(a-growers)/eh/components/_NebulaLinks'
+import { XCLUSIVES_IMAGE, LIFEDESIGN_IMAGE, FREEBIES_IMAGE } from '../../(a-growers)/eh/components/_NebulaLinks'
 
 
 // @@ Import utility hooks @@
