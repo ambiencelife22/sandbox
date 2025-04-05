@@ -6,7 +6,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { motion } from 'framer-motion'
 
 // @@ Import external structure functions @@
-import { DotsLoadingAnimation } from '@/components/ui/loading-animation'
+import { DotsLoadingAnimation } from '../../../../components/ui/loading-animation'
 
 
 const formatParagraphs = (text) => {

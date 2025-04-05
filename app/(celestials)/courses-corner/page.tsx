@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react'
 
 // @@ Import external structure hooks @@
-import { CoursesLoadingAnimation } from '@/components/ui/loading-animation'
+import { CoursesLoadingAnimation } from '../../../components/ui/loading-animation'
 
 // @@ Import layout functions @@
-import Header from '@/app/(a-growers)/eh/header'
+import Header from '../../(a-growers)/eh/header'
 import BrickCoursesIntro from './components/_BrickCoursesIntro'
 import BrickCourseHHIntro from './components/_BrickCourseHHIntro'
 import BrickCoursesCorner from './components/_BrickCoursesCorner'

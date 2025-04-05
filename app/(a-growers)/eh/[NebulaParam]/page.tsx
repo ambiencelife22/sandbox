@@ -5,17 +5,17 @@
 import React, { useState, useEffect } from 'react'
 
 // @@ Error Handling
-import FunctionBeach404 from '@/pages/beach404'
+import FunctionBeach404 from '../../../../pages/beach404'
 
 // @@ Import layout functions @@
-import BrickContainer from '@/app/(a-growers)/eh/components/_BrickContainer'
+import BrickContainer from '../../eh/components/_BrickContainer'
 import BrickCelestial from '../components/_BrickCelestial'
 import BrickCelestialCustom from '../components/_BrickCelestialCustom'
 import BrickXclusivesIntro from '../components/_BrickXclusivesIntro'
 import BrickCelestialCustomXTLink from '../components/_BrickCelestialCustomXTLink'
 import Header from '../header'
-import { XCLUSIVES_IMAGE, LIFEDESIGN_IMAGE, FREEBIES_IMAGE } from '@/app/(a-growers)/eh/components/_NebulaLinks'
-import { TELEGRAM_IMAGE } from '@/app/(a-growers)/eh/components/_SMLinks'
+import { XCLUSIVES_IMAGE, LIFEDESIGN_IMAGE, FREEBIES_IMAGE } from '../../eh/components/_NebulaLinks'
+import { TELEGRAM_IMAGE } from '../../eh/components/_SMLinks'
 
 interface NebulaParams {
   NebulaParam: string

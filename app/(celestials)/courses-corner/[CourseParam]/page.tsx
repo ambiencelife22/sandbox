@@ -5,10 +5,10 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 // @@ Import feature provider
-import { CourseProvider } from '@/utils/(contexts)/CoursesContext'
+import { CourseProvider } from '../../../../utils/(contexts)/CoursesContext'
 
 // @@ Import external structure functions @@
-import { CoursesLoadingAnimation } from '@/components/ui/loading-animation'
+import { CoursesLoadingAnimation } from '../../../../components/ui/loading-animation'
 
 // @@ Import child components @@
 import HumanHarmonyCourseDisclaimer1 from '../components/HumanHarmonyCourseDisclaimer1'
@@ -16,7 +16,7 @@ import HumanHarmonyCourseDisclaimer2 from '../components/HumanHarmonyCourseDiscl
 import CourseTabs from '../components/CourseTabs'
 
 // @@ Import Type-Check Interfaces @@
-import { FullCourseData } from '@/utils/(structure)/InterfacesCourses'
+import { FullCourseData } from '../../../../utils/(structure)/InterfacesCourses'
 
 // @@ Import Feature Data
 import courseData from '../components/HumanHarmony.json'

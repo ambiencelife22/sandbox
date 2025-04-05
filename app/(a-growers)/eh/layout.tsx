@@ -3,13 +3,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 
 // @@ Import external structure functions @@
-import { DotsLoadingAnimation } from '@/components/ui/loading-animation'
+import { DotsLoadingAnimation } from '../../../components/ui/loading-animation'
 
 // @@ Import App Version Function @@
-import VersionContext from '@/utils/(contexts)/VersionContext'
+import VersionContext from '../../../utils/(contexts)/VersionContext'
 
-import NavBar from '@/app/(a-growers)/components/NavBarGrowers'
-import Footer from '@/app/(a-growers)/components/FooterGrowers'
+// import NavBar from '../../(a-growers)/components/NavBarGrowers'
+// import Footer from '@/app/(a-growers)/components/FooterGrowers'
 
 interface LayoutProps {
     children: React.ReactNode
@@ -73,11 +73,11 @@ export default function GrowersLayout({
 
     return (
         <main className='text-[Plus Jakarta Sans] h-7/8 Woohoo'>
-            <NavBar />
+            {/* <NavBar /> */}
             <div className='al_home py-8 text-[Plus Jakarta Sans] pb-[121px]'>
                 {children}
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </main>
     )
 }
