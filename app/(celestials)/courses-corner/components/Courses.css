@@ -1,0 +1,187 @@
+/* Courses.css */
+.faq_main {
+    height: auto;
+    width: 88%;
+  }
+  
+  .vertical_tabs {
+    display: flex;
+    justify-content: center;
+    margin: 0 2%;
+    flex-direction: row;
+    align-items: flex-start;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .sidebar_tab_buttons,
+  .side_menu_sidebar_tab_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2%;
+    color: #f1f1f1;
+  }
+  
+  .side_menu_sidebar_tab_buttons {
+    align-items: center;
+  }
+  
+  .sidebar_tab_button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #661470;
+    cursor: pointer;
+    outline: none;
+    width: 232px;
+    font-weight: 400;
+    border-radius: 22px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  .sidebar_tab_button:hover,
+  .sidebar_tab_button:focus {
+    box-shadow: 0px 22px 22px #2003238f;
+    border-radius: 22px;
+    transform: scale(1.02);
+    transition: 200ms ease-in-out;
+  }
+  
+  .sidebar_tab_button.profile_tab_active {
+    background-color: #82188f;
+    color: #f1f1f1;
+  }
+  
+  .tab_content {
+    flex: 1;
+    padding: 22px;
+    border-radius: 11px;
+    height: 88%;
+    /* background: linear-gradient(46deg, #650071, #7d038b); */
+  }
+  
+  .sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 8.8em;
+    z-index: 9;
+    background: linear-gradient(46deg, #27002b, #650071);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar.sidebar_open {
+    width: 280px;
+  }
+  
+  .menu_button {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+  
+    .vertical_tabs {
+      margin-top: 22px;
+    }
+  
+    .sidebar_tab_buttons {
+      display: none;
+    }
+  
+    .menu_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 22px;
+      height: 22px;
+      z-index: 2;
+    }
+  
+    .tab_content {
+      margin-top: 22px;
+    }
+  
+    .sidebar_tab_button:hover,
+    .sidebar_tab_button:focus {
+      box-shadow: 0px 22px 22px #2003238f;
+      border-radius: 22px;
+      transform: scale(1.02);
+      transition: 200ms ease-in-out;
+    }
+  
+    .sidebar_tab_button.profile_tab_active {
+      background-color: #82188f;
+      color: #f1f1f1;
+    }
+  }
+  
+  .section_header {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 11px;
+    cursor: pointer;
+  }
+
+  .course_section_header {
+    font-size: 11px;
+    color: #F1F1F1;
+    cursor: pointer;
+  }
+
+  .course_topic_header {
+    font-size: 22px;
+    color: #F1F1F1;
+    font-weight: bold;
+    margin-bottom: 11px;
+    cursor: pointer;
+  }
+  
+  .faq_item {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .faq_question {
+    padding: 10px;
+    background: linear-gradient(22deg, #4b0052, #650071);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f1f1f1;
+    border-radius: 11px;
+  }
+  
+  .faq_question:hover,
+  .faq_question:focus {
+    box-shadow: 0px 22px 22px #2003238f;
+    border-radius: 11px;
+    transform: scale(1.01);
+    transition: 200ms ease-in-out;
+  }
+  
+  .faq_answer {
+    padding: 11px;
+    padding-top: 22px;
+    display: none;
+    color: #f1f1f1;
+  }
+  
+  .faq_question.profile_tab_active+.faq_answer {
+    display: block;
+  }

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "courseSectionName": "Introduction",
+    "question": "What is something that lights up my day, motivates me, keeps me going, and/or makes me feel invincible?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "2",
+    "courseSectionName": "Introduction",
+    "question": " With reference to the previous question, why do I think it has that affect on me?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "3",
+    "courseSectionName": "Understand The Unseen",
+    "question": "What 6 needs make up The Human Needs Concept?",
+    "options": ["Certainty, Variety, Relevance, Connection, Growing, and Contribution", "Properity, Success, Victory, Achievement, Promotions, Conquests", "Justice, Control, Enterprise, Success, Fortune, Innovation"],
+    "correctAnswer": "Certainty, Variety, Relevance, Connection, Growing, and Contribution",
+    "type": "mc"
+  },
+  {
+    "id": "4",
+    "courseSectionName": "Understand The Unseen",
+    "question": "What is an example of how these needs are interconnected within our life's circumstances?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "5",
+    "courseSectionName": "Certainty",
+    "question": "How does the Certainty of my abilities, strengths, and skillset contribute to my sense of self-confidence in the workplace or with my passions and hobbies?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "6",
+    "courseSectionName": "Certainty",
+    "question": "How could rock-solid Certainty of love, loyalty, and lasting devotion enhance my (current or future) relationship?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "6",
+    "courseSectionName": "Variety",
+    "question": "Recall a time when the need for variety empowered my decisions or enhanced my experiences...",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  },
+  {
+    "id": "7",
+    "courseSectionName": "Variety",
+    "question": "How could trying new things, seeing new places, and exploring new ideas together help enhance a friendship or romantic relationship?",
+    "options": [],
+    "correctAnswer": "",
+    "type": "oe"
+  }
+]
