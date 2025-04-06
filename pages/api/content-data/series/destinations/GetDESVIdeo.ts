@@ -1,7 +1,7 @@
 /* GetDESVIdeo.ts */
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getUserPoints } from '@/app/(libs)/helpers'
+import { getUserPoints } from '../../../../../app/(libs)/helpers'
 
 const API_URL = 'https://ambiencelife-api-us.com/api/v1/data/analytics/user/des-activity'
 
