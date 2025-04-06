@@ -8,14 +8,14 @@ import Link from 'next/link'
 import { Dialog } from '@headlessui/react'
 
 // @@ Import points hooks @@
-import { updateUserPoints, getUserPoints } from '@/app/(libs)/helpers'
+import { updateUserPoints, getUserPoints } from '../../../(libs)/helpers'
 
 // @@ Import icons @@
-import icon from '@/app/ambience-03-White.png'
+import icon from '../../../app/ambience-03-White.png'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 // @@ Import external functions @@
-import ModalContainer from '@/app/components/ModalContainer'
+import ModalContainer from '/app/components/ModalContainer'
 
 const TrophyIcon = 'https://firebasestorage.googleapis.com/v0/b/ambiencelife.appspot.com/o/images%2Fimages_global%2Fimages_home%2Fachievements.svg?alt=media&token=52ca6706-bfec-4c22-bce8-66b1bd366d12'
 

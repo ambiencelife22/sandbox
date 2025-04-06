@@ -1,5 +1,5 @@
 import React from 'react'
-import AuthLayout from '@/utils/(auth-layouts)/AuthLayout'
+import AuthLayout from '../../../../../../utils/(auth-layouts)/AuthLayout'
 function layout({
     children,
 }: {

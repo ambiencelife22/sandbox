@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 
 // @@ Import utility hooks @@
 import { useForm } from 'react-hook-form'
-import { ErrorMessage } from '@/app/components/ErrorAlert'
+// import { ErrorMessage } from '@/app/components/ErrorAlert'
 import { motion } from 'framer-motion'
 
-import { Topic } from '@/utils/(structure)/InterfacesCourses'
+import { Topic } from '../../../../../../utils/(structure)/InterfacesCourses'
 
 
 interface TopicQuestionProps {

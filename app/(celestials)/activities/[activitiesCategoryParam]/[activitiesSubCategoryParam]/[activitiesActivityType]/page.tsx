@@ -3,17 +3,17 @@
 import React, { useEffect, useState } from 'react'
 
 // @@ Utilities @@
-import Function404 from '@/pages/activity404'
+// import Function404 from '@/pages/activity404'
 
 // @@ Import external ux functions @@
-import { ActivitiesLoadingAnimation } from '@/components/ui/loading-animation'
+// import { ActivitiesLoadingAnimation } from '@/components/ui/loading-animation'
 
 // @@ Import Activity Types @@
-import Seeds from '@/app/(beacons)/activities/activity-seeds/page'
-import Typer from '@/app/(beacons)/activities/activity-typer/page'
-import Cards from '@/app/(beacons)/activities/activity-cards/page'
-import Scramble from '@/app/(beacons)/activities/activity-scramble/page'
-import FunctionBeach404 from '@/pages/beach404'
+import Seeds from '../../../../../activities/activity-seeds/page'
+import Typer from '../../../../../activities/activity-typer/page'
+import Cards from '../../../../../activities/activity-cards/page'
+import Scramble from '../../../../../activities/activity-scramble/page'
+import FunctionBeach404 from '../../../../../../pages/beach404'
 
 enum ActivityTypes {
   Seeds = 'Seeds',

@@ -4,7 +4,7 @@ import React, { FC } from 'react'
 // @@ Import aux hooks @@
 import { motion } from 'framer-motion'
 
-import { Topic } from '@/utils/(structure)/InterfacesCourses'
+import { Topic } from '../../../../../../utils/(structure)/InterfacesCourses'
 
 
 interface TopicCompleteProps {

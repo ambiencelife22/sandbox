@@ -2,16 +2,16 @@
 import React, { FunctionComponent, Fragment, useState, useEffect, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-import { fetchFilterCategoryData } from '@/utils/(hooks-data)/orbits/fetchAllAppFilteredCategories'
+import { fetchFilterCategoryData } from '../../../../../utils/(hooks-data)/orbits/fetchAllAppFilteredCategories'
 
 // @@ Import external structure functions @@
-import NavBar from '@/app/(a-growers)/components/NavBarActivities'
-import Footer from '@/app/(a-growers)/components/FooterGrowers'
+// import NavBar from '@/app/(a-growers)/components/NavBarActivities'
+// import Footer from '@/app/(a-growers)/components/FooterGrowers'
 import BrickActivityType from '../../components/_BrickActivityType'
-import ACTIVITIESProgressBar from '@/app/(celestials)/activities/components/_Activities_ProgressBar'
+import ACTIVITIESProgressBar from '../../components/_Activities_ProgressBar'
 
 // @@ Import external ux functions @@
-import { ActivitiesLoadingAnimation } from '@/components/ui/loading-animation'
+import { ActivitiesLoadingAnimation } from '../../../../../components/ui/loading-animation'
 
 import {
   ActivityTypeProgressData,
@@ -20,10 +20,10 @@ import {
   calculateActivityTokens,
   calculateTotalThemeProgress,
   getActivityData
-} from '@/utils/(calcs)/_ActivityProgressCalculations'
+} from '../../../../../utils/(calcs)/_ActivityProgressCalculations'
 
 // @@ Import child functions @@
-import ActivityIntroContent from '@/app/(celestials)/activities/components/ActivityIntro'
+import ActivityIntroContent from '../../components/ActivityIntro'
 import { motion } from 'framer-motion'
 
 interface ActivitySubCategoryPageProps {
@@ -300,7 +300,7 @@ const ActivitySubCategoryPage: FunctionComponent<ActivitySubCategoryPageProps> =
 
   return (
     <div className='text-[Plus Jakarta Sans]'>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className='al_home py-8 text-[Plus Jakarta Sans] pb-[121px]'>
         <div className='activity_subcategory_container'>
           <div className='mt-[4rem] m-auto w-full flex justify-between items-center max-w-[1100px]'>
@@ -355,7 +355,7 @@ const ActivitySubCategoryPage: FunctionComponent<ActivitySubCategoryPageProps> =
       ) : (
         <></>
       )}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

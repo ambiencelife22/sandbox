@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Transition } from 'react-transition-group'
 
 // @@ Import external structure functions @@
-import { CoursesLoadingAnimation } from '@/components/ui/loading-animation'
+import { CoursesLoadingAnimation } from '../../../../../components/ui/loading-animation'
 
 const Explain = () => {
   const [currentScreen, setCurrentScreen] = useState(0)

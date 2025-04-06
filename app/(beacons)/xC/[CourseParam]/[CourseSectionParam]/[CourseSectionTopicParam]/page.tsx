@@ -5,19 +5,19 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 // @@ Import feature context
-import { useCourseContext } from '@/utils/(contexts)/CoursesContext'
+// import { useCourseContext } from '@/utils/(contexts)/CoursesContext'
 
 // @@ Import external structure functions @@
-import { CoursesLoadingAnimation } from '@/components/ui/loading-animation'
+import { CoursesLoadingAnimation } from '../../../../../../components/ui/loading-animation'
 
 // @@ Import child components @@
 import CourseTopicComponent from '../components/CourseTopicComponent'
 import { CourseNoTopic } from '../components/CourseNoTopic'
 
 // @@ Import Feature Data
-import courseData from '@/app/(celestials)/courses-corner/components/HumanHarmony.json'
+import courseData from '../../../../../(celestials)/courses-corner/components/HumanHarmony.json'
 
-import { FullCourseData, CourseSectionData, Topic } from '@/utils/(structure)/InterfacesCourses'
+import { FullCourseData, CourseSectionData, Topic } from '../../../../../../utils/(structure)/InterfacesCourses'
 
 
 export interface Paragraph {

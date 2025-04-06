@@ -7,7 +7,7 @@ import Link from 'next/link'
 // @@ Import aux hooks @@
 import { motion } from 'framer-motion'
 
-import '@/app/(a-growers)/profile/components/help/Fun-F-Faqs.css'
+import '../../../../../(a-growers)/profile/components/help/Fun-F-Faqs.css'
 // import '@/app/(a-growers)/profile/components/help/NewsNNotes.css'
 
 const formatParagraphs = (text) => {

@@ -6,12 +6,12 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 // @@ Import external structure functions @@
-import { DotsLoadingAnimation } from '@/components/ui/loading-animation'
-import NavBar from '@/app/(a-growers)/components/NavBarGrowers'
-import Footer from '@/app/(a-growers)/components/FooterGrowers'
-import GridContainer from '@/app/components/(grid_components)/_grid_container'
+import { DotsLoadingAnimation } from '../../../../components/ui/loading-animation'
+// import NavBar from '@/app/(a-growers)/components/NavBarGrowers'
+// import Footer from '@/app/(a-growers)/components/FooterGrowers'
+import GridContainer from '../../../components/(grid_components)/_grid_container'
 
-import ActivityIntroIcon from '@/app/(icons)/(svgs)/ActivityIntroIcon'
+// import ActivityIntroIcon from '@/app/(icons)/(svgs)/ActivityIntroIcon'
 
 // !! MILESTONE !! 300 videos live in DESTINATIONS!
 
@@ -96,7 +96,7 @@ function ActivityIntrosPage(props: any) {
   if (User.firstName != null) {
     return (
       <main className='Woohoo pjs h-7/8'>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className='page_headline pt-5 pb-10 mt-2'>
           <div className='max-w-[1000px] m-auto flex'>
           </div>
@@ -151,7 +151,7 @@ function ActivityIntrosPage(props: any) {
             </GridContainer>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </main>
     )
   }
