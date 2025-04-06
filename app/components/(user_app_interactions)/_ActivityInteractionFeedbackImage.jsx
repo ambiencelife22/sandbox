@@ -1,6 +1,6 @@
 /* _ActivityInteractionFeedbackImage */
 import React from 'react'
-import { CheckMark, XMark } from '@/app/components/SVG'
+import { CheckMark, XMark } from '../../components/SVG'
 
 function ActivityInteractionFeedbackImage({ isCorrect }) {
   return (

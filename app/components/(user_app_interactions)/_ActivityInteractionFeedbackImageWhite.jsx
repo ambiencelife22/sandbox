@@ -1,6 +1,6 @@
 /* _ActivityInteractionFeedbackImageWhite */
 import React from 'react'
-import { CheckMarkWhite, XMark } from '@/app/components/SVG'
+import { CheckMarkWhite, XMark } from '../../components/SVG'
 
 function ActivityInteractionFeedbackImageWhite({ type }) {
   return (
