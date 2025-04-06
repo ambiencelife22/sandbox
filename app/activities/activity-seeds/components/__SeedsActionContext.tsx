@@ -3,7 +3,7 @@
 import React, { createContext, useState } from 'react'
 
 // @@ Import Timer Context @@
-import { useTimer } from '../../components/activities/_TimerContext'
+import { useTimer } from '../../../(a-growers)/components/activities/_TimerContext'
 
 interface SeedsActionContextProps {
     handleCorrectSeedsActions: (actionPhrase: string, xTheme: string, phraseID: string) => void

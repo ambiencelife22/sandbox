@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 
 // @@ Import aux hooks @@
-import activitySoundManager from '../../components/activities/activitySoundManager'
+import activitySoundManager from '../../../(a-growers)/components/activities/activitySoundManager'
 
 function DroppingSeed({
   showDropSeed,

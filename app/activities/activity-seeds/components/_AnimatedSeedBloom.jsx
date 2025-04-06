@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 // @@ Import external functions @@
-import activitySoundManager from '../../components/activities/activitySoundManager'
+import activitySoundManager from '../../../(a-growers)/components/activities/activitySoundManager'
 
 const totalPhases = 3
 const phaseDuration = 700
