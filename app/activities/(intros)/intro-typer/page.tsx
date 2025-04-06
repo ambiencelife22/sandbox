@@ -3,11 +3,11 @@
 import * as React from 'react'
 
 // @@ Import Structure Functions @@
-import NavBar from '@/app/(a-growers)/components/NavBarActivities'
-import Footer from '@/app/(a-growers)/components/FooterGrowers'
+import NavBar from '../../../(a-growers)/components/NavBarActivities'
+import Footer from '../../../(a-growers)/components/FooterGrowers'
 
 // @@ Import Child Functions @@
-import Explain from '@/app/(beacons)/activities/(intros)/intro-typer/components/TyperIntro'
+import Explain from '../intro-typer/components/TyperIntro'
 
 
 const IntroComponent: React.FC = () => {

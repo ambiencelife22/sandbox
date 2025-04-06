@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import TimeWidget from '../../(a-growers)/components/activities/Timer'
 
 // @@ Import external structure functions @@
-import { ActivitiesLoadingAnimation } from '@/components/ui/loading-animation'
+import { ActivitiesLoadingAnimation } from '../../../components/ui/loading-animation'
 
 // @@ Import Timer Context @@
 import { TimerProvider } from '../../(a-growers)/components/activities/_TimerContext'
@@ -15,8 +15,8 @@ import { TimerProvider } from '../../(a-growers)/components/activities/_TimerCon
 import activitySoundManager from '../../(a-growers)/components/activities/activitySoundManager'
 
 // @@ Import data hooks @@
-import { fetchActionCorrectElementsData, fetchActionIncorrectPiecessData } from '@/utils/(hooks-data)/activities/fetchActivityData'
-import { createUserStats, saveCombinedActivityData, activityCorrectPhraseInteractions } from '@/utils/(hooks-data)/activities/activityUserResults'
+import { fetchActionCorrectElementsData, fetchActionIncorrectPiecessData } from '../../../utils/(hooks-data)/activities/fetchActivityData'
+import { createUserStats, saveCombinedActivityData, activityCorrectPhraseInteractions } from '../../../utils/(hooks-data)/activities/activityUserResults'
 
 // @@ Import child functions @@
 import ScrambleFunctions from './components/Scramble'
@@ -24,7 +24,7 @@ import ScrambleFunctions from './components/Scramble'
 // @@ Import external functions @@
 import ActivityCompleteAnimation from '../../(a-growers)/components/activities/(activityComplete)/activityCompleteAnimation'
 
-import { getUserActivityThemePoints } from '@/app/(libs)/helpers'
+import { getUserActivityThemePoints } from '../../(libs)/helpers'
 // !! Milestone !! 44 Action Incorrect Pieces
 
 

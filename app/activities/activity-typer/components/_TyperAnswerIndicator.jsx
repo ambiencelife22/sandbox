@@ -1,5 +1,5 @@
 /* _TyperAnswerIndicator.jsx */
-import { CheckMarkWhite, XMark } from '@/app/components/SVG'
+import { CheckMarkWhite, XMark } from '../../../components/SVG'
 
 import React from 'react'
 

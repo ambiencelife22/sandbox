@@ -4,9 +4,10 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import icon from '@/app/ambience-03-White.png'
+import icon from '../ambience-03-White.png'
 
-import { AppStylingProvider } from '@/utils/(contexts)/AppStylingContext'
+import { AppStylingProvider } from '../utils/(contexts)/AppStylingContext'
+
 
 const FunctionLost404 = () => {
     return (

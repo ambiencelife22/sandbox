@@ -15,8 +15,8 @@ import { motion } from 'framer-motion'
 import activitySoundManager from '../../(a-growers)/components/activities/activitySoundManager'
 
 // @@ Import data hooks @@
-import { fetchActionCorrectElementsData } from '@/utils/(hooks-data)/activities/fetchActivityData'
-import { createUserStats, saveCombinedActivityData, activityCorrectPhraseInteractions } from '@/utils/(hooks-data)/activities/activityUserResults'
+import { fetchActionCorrectElementsData } from '../../../utils/(hooks-data)/activities/fetchActivityData'
+import { createUserStats, saveCombinedActivityData, activityCorrectPhraseInteractions } from '../../../utils/(hooks-data)/activities/activityUserResults'
 
 // @@ Import utility context hooks
 import { SeedsActionProvider } from './components/__SeedsActionContext'
@@ -26,7 +26,7 @@ import ActivitySeeds from './components/Seeds'
 
 // @@ Import external functions @@
 import ActivityCompleteAnimation from '../../(a-growers)/components/activities/(activityComplete)/activityCompleteAnimation'
-import { getUserActivityThemePoints } from '@/app/(libs)/helpers'
+import { getUserActivityThemePoints } from '../../(libs)/helpers'
 
 type SessionData = {
   userID?: string

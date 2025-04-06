@@ -3,14 +3,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 // @@ Import external structure functions @@
-import { DotsLoadingAnimation } from '@/components/ui/loading-animation'
+import { DotsLoadingAnimation } from '../../components/ui/loading-animation'
 
 // @@ Import local storage hooks @@
-import { clearLocalStorageExcept } from '@/utils/(contexts)/ClearLocalStorageExcept'
+import { clearLocalStorageExcept } from '../../utils/(contexts)/ClearLocalStorageExcept'
 
 // @@ Import version control @@
-import VersionContext from '@/utils/(contexts)/VersionContext'
-import _appVersion from '@/app/components/_appVersion'
+import VersionContext from '../../utils/(contexts)/VersionContext'
+import _appVersion from '../components/_appVersion'
 
 // @@ Import AL emblem
 import icon from '../ambience-03-White.png'

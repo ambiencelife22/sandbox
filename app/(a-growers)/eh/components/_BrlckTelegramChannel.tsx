@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { motion } from 'framer-motion'
 
-import { TELEGRAM_IMAGE } from '@/app/(a-growers)/eh/components/_SMLinks'
+import { TELEGRAM_IMAGE } from '../../eh/components/_SMLinks'
 
 
 const hoverEnlarge = {

@@ -1,9 +1,9 @@
 /* layout.tsx */
 import React from 'react'
 
-import AuthLayout from '@/utils/(auth-layouts)/AuthLayout'
+import AuthLayout from '../../../../../utils/(auth-layouts)/AuthLayout'
 
-import { CourseProvider } from '@/utils/(contexts)/CoursesContext'
+import { CourseProvider } from '../../../../../utils/(contexts)/CoursesContext'
 
 function layout({
     children

@@ -5,18 +5,18 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 // @@ Import external structure functions @@
-import NavBarGrowers from '@/app/(a-growers)/components/NavBarGrowers'
-import Footer from '@/app/(a-growers)/components/FooterGrowers'
+// import NavBarGrowers from '@/app/(a-growers)/components/NavBarGrowers'
+// import Footer from '@/app/(a-growers)/components/FooterGrowers'
 
 // @@ Import child components @@
 import CourseSectionTabs from './components/CourseSectionTabs'
 
 // @@ Import external structure hooks @@
-import { CoursesLoadingAnimation } from '@/components/ui/loading-animation'
+import { CoursesLoadingAnimation } from '../../../../../components/ui/loading-animation'
 
 // @@ Import Feature Data
-import courseData from '@/app/(celestials)/courses-corner/components/HumanHarmony.json'
-import { FullCourseData, CourseSectionData, Topic } from '@/utils/(structure)/InterfacesCourses'
+import courseData from '../../../../(celestials)/courses-corner/components/HumanHarmony.json'
+import { FullCourseData, CourseSectionData, Topic } from '../../../../../utils/(structure)/InterfacesCourses'
 
 import '@/app/(celestials)/courses-corner/components/Courses.css'
 
@@ -127,7 +127,7 @@ const CourseSectionParam: React.FC = () => {
 
   return (
     <div>
-      <NavBarGrowers />
+      {/* <NavBarGrowers /> */}
       <div className='mt-[121px]'>
         <CourseSectionTabs
           courseContent={courseDataFromApi}
@@ -139,7 +139,7 @@ const CourseSectionParam: React.FC = () => {
         />
         
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

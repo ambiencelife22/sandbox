@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 // @@ Import aux hooks @@
-import { CheckMarkWhite, XMark } from '@/app/components/SVG'
+import { CheckMarkWhite, XMark } from '../../../components/SVG'
 import { validateTyperAnswer } from './_TyperValidateAnswer'
 
 import Head from 'next/head'
