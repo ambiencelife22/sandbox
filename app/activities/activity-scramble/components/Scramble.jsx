@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 
 // @@ Import external functions @@
-import ActivityInteractionFeedbackImageWhite from '../../components/(user_app_interactions)/_ActivityInteractionFeedbackImageWhite'
+import ActivityInteractionFeedbackImageWhite from '../../../components/(user_app_interactions)/_ActivityInteractionFeedbackImageWhite'
 import shuffleScrambleArray from './_ShuffleScrambleArray'
 
 import { motion, useCycle } from 'framer-motion'

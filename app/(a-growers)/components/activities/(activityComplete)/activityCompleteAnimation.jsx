@@ -6,14 +6,14 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 // @@ Import external functions @@
-import useSessionData from '../../../../../utils/(hooks-data)/activities/useDataFetchClient.ts'
+import useSessionData from '@/utils/(hooks-data)/activities/useSessionData'
 
 // @@ Import utility functions @@
-import activitySoundManager from '../activitySoundManager'
+import activitySoundManager from '@/app/(a-growers)/components/activities/activitySoundManager.jsx'
 
 // @@ Import aux hooks @@
 import { ResultDisplay } from './activityResultsDisplay'
-import { ambientFront, ambienceBack } from '../../../../components/(images)/ambients.js'
+import { ambientFront, ambienceBack } from '@/app/components/(images)/ambients'
 
 const initialState = {
   activityFinish: false,

@@ -11,7 +11,7 @@ import AnimatedSeed from './_AnimatedSeedBloom'
 import SeedsShowCorrectPhrase from './_SeedsShowCorrectPhrase'
 
 // @@ Import utility functions @@
-import activitySoundManager from '../../components/activities/activitySoundManager'
+import activitySoundManager from '../../../(a-growers)/components/activities/activitySoundManager'
 
 // @@ Import utility context hooks
 import { useSeedsActions } from './__SeedsActionContext'
