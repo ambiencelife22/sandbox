@@ -3,10 +3,10 @@
 import { imageConfigDefault } from 'next/dist/shared/lib/image-config'
 import React from 'react'
 import { motion } from 'framer-motion'
-// import { HomeLink } from '@/app/(a-growers)/eh/components/_NebulaLinks'
-// import { FreebiesLink } from '@/app/(a-growers)/eh/components/_NebulaLinks'
-// import { XclusivesLink } from '@/app/(a-growers)/eh/components/_NebulaLinks'
-// import { LifeDesignLink } from '@/app/(a-growers)/eh/components/_NebulaLinks'
+import { HomeLink } from '../eh/components/_NebulaLinks'
+import { FreebiesLink } from '../eh/components/_NebulaLinks'
+import { XclusivesLink } from '../eh/components/_NebulaLinks'
+import { LifeDesignLink } from '../eh/components/_NebulaLinks'
 
 
 export default function Footer() {
