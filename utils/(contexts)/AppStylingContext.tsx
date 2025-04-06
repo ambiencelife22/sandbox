@@ -2,7 +2,7 @@
 'use client'
 import { createContext, ReactNode, useEffect } from 'react'
 
-import '@/app/app.css'
+import '../../app/app.css'
 
 interface GlobalStyleProviderProps {
   children: ReactNode
