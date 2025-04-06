@@ -12,7 +12,7 @@ import { Dialog } from '@headlessui/react'
 import { updateUserPoints, getUserPoints } from '../../(libs)/helpers'
 
 // @@ Import icons @@
-import icon from '../../../ambience-03-White.png'
+// import icon from '../../../ambience-03-White.png'
 
 // @@ Import external functions @@
 import ModalContainer from '../../components/ModalContainer'

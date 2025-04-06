@@ -13,7 +13,7 @@ import VersionContext from '../../utils/(contexts)/VersionContext'
 import _appVersion from '../components/_appVersion'
 
 // @@ Import AL emblem
-import icon from '../../ambience-03-White.png'
+import icon from '../ambience-03-White.png'
 
 function LogoutPage() {
 
