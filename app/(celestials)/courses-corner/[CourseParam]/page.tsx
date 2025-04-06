@@ -43,8 +43,8 @@ function CoursePage() {
   const [courseNotFound, setCourseNotFound] = useState(false)
 
   const pathname = usePathname()
-const pathParts = pathname.split('/')
-const courseUrl = `/${pathParts[pathParts.length - 1]}`
+const pathParts = pathname?.split('/') || []
+const courseUrl = `/${pathParts[pathParts.length - 1] || ''}`
   
 
   const handleNextClick = () => {
