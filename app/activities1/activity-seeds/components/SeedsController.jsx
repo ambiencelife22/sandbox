@@ -1,6 +1,6 @@
 /* SeedsController.jsx */
 import React, { useState, useEffect, useRef } from 'react'
-XMLDocument
+
 // @@ Import external hooks @@
 import { CheckMarkWhite } from '../../../components/SVG'
 
