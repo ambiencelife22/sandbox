@@ -9,10 +9,10 @@ import React, { useEffect, useState } from 'react'
 // import { ActivitiesLoadingAnimation } from '@/components/ui/loading-animation'
 
 // @@ Import Activity Types @@
-import Seeds from '../../../../../activities/activity-seeds/page'
-import Typer from '../../../../../activities/activity-typer/page'
-import Cards from '../../../../../activities/activity-cards/page'
-import Scramble from '../../../../../activities/activity-scramble/page'
+import Seeds from '../../../../../activities1/activity-seeds/page'
+import Typer from '../../../../../activities1/activity-typer/page'
+import Cards from '../../../../../activities1/activity-cards/page'
+import Scramble from '../../../../../activities1/activity-scramble/page'
 import FunctionBeach404 from '../../../../../../pages/beach404'
 
 enum ActivityTypes {

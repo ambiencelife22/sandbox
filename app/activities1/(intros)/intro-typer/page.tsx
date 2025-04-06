@@ -7,7 +7,7 @@ import NavBar from '../../../(a-growers)/components/NavBarActivities'
 import Footer from '../../../(a-growers)/components/FooterGrowers'
 
 // @@ Import Child Functions @@
-import Explain from '../intro-seeds/components/SeedsIntro'
+import Explain from './components/TyperIntro'
 
 
 const IntroComponent: React.FC = () => {

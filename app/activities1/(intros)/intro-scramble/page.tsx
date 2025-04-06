@@ -7,7 +7,7 @@ import * as React from 'react'
 // import Footer from '@/app/(a-growers)/components/FooterGrowers'
 
 // @@ Import Child Functions @@
-import Explain from '../intro-scramble/components/ScrambleIntro'
+import Explain from './components/ScrambleIntro'
 
 
 const IntroComponent: React.FC = () => {
