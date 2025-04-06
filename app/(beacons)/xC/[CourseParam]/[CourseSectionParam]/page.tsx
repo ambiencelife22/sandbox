@@ -18,7 +18,7 @@ import { CoursesLoadingAnimation } from '../../../../../components/ui/loading-an
 import courseData from '../../../../(celestials)/courses-corner/components/HumanHarmony.json'
 import { FullCourseData, CourseSectionData, Topic } from '../../../../../utils/(structure)/InterfacesCourses'
 
-import '@/app/(celestials)/courses-corner/components/Courses.css'
+import '../../../../(celestials)/courses-corner/components/Courses.css'
 
 const modalDisclaimer = [
   {
