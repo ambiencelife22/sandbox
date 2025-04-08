@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import reframeData from '../activities1/activity-reframe/components/reframe.json'
+import reframeData from '../activities1/activity-reframer/components/reframer.json'
 import './components/styles.css'
 
 const ReframeReviewPage = () => {
