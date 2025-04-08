@@ -3,8 +3,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import reframeData from './components/reframe.json'
-import './components/reframe.css'
+import reframeData from './components/reframer.json'
+import './components/reframer.css'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const ReframeGame = () => {
