@@ -30,23 +30,23 @@ export default function MemberReflectionTemplate() {
   const questions: Question[] = [
     {
       key: 'created',
-      label: 'What did I create or move forward this week?',
+      label: 'What did I take action on this week that matters?',
     },
     {
       key: 'aligned',
-      label: 'Where did I feel aligned?',
+      label: 'When did I feel like I was truly myself?',
     },
     {
       key: 'adjust',
-      label: 'What needs adjusting?',
+      label: 'What felt off or out of sync?',
     },
     {
       key: 'energized',
-      label: 'What energized me?',
+      label: 'What gave me that \'I want more of this\' feeling?',
     },
     {
       key: 'release',
-      label: 'What can I release or delegate?',
+      label: 'What can I ask for help with or simplify?',
     },
   ]
 
