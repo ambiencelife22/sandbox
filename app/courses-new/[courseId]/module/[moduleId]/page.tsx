@@ -2,13 +2,11 @@
 
 import ModuleOverview from './components/ModuleOverview'
 
-export default async function Page({
-  params,
-}: {
-  params: { courseId: string; moduleId: string }
-}) {
+export default async function Page(props: any) {
+  const { courseId, moduleId } = props.params
+
   return await ModuleOverview({
-    courseId: params.courseId,
-    moduleId: params.moduleId,
+    courseId,
+    moduleId,
   })
 }
