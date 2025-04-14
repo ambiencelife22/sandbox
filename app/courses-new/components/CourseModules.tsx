@@ -4,18 +4,16 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import Link from 'next/link'
 
-
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { redirect } from 'next/navigation'
 import { Module } from './CourseModulePage'
 
 interface CourseModulesProps {
-  courseId: string
+  courseId: string // TitleCase for loading JSON file
+  routeId: string  // kebab-case for building URLs
 }
 
-export default async function CourseModules({ courseId }: CourseModulesProps) {
+export default async function CourseModules({ courseId, routeId }: CourseModulesProps) {
   try {
     const filePath = path.join(process.cwd(), 'app/courses-new/data', `${courseId}.json`)
     const fileContents = await fs.readFile(filePath, 'utf-8')
@@ -26,7 +24,7 @@ export default async function CourseModules({ courseId }: CourseModulesProps) {
     return (
       <div className='p-6 max-w-5xl mx-auto'>
         <h1 className='text-3xl font-bold mb-4 capitalize'>
-          {courseId.replace(/-/g, ' ')} Course
+          {routeId.replace(/-/g, ' ')} Course
         </h1>
 
         <Tabs defaultValue={activeModule}>
@@ -44,7 +42,7 @@ export default async function CourseModules({ courseId }: CourseModulesProps) {
                 <CardContent className='space-y-4'>
                   <h2 className='text-xl font-semibold'>{module.title}</h2>
                   <p>{module.description}</p>
-                  <Link href={`/courses-new/${courseId}/module/${module.id}`}>
+                  <Link href={`/courses-new/${routeId}/module/${module.id}`}>
                     Start Module
                   </Link>
                 </CardContent>

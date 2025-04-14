@@ -1,26 +1,101 @@
-
 {
-    "modules": [
-      {
-        "id": "1",
-        "title": "The Inner Compass",
-        "description": "Define your version of fulfillment and create your life mission."
-      },
-      {
-        "id": "2",
-        "title": "Foundations & Friction",
-        "description": "Map your current state and uncover what’s fueling or draining you."
-      },
-      {
-        "id": "3",
-        "title": "Money Flow & Life Design",
-        "description": "Clarify your finances and design your lifestyle with intention."
-      },
-      {
-        "id": "4",
-        "title": "Momentum & Meaning",
-        "description": "Create rhythms, habits, and checkpoints to stay aligned."
-      }
-    ]
-  }
-  
+  "modules": [
+    {
+      "id": "1",
+      "title": "The Inner Compass",
+      "description": "Define your version of fulfillment and create your life mission.",
+      "submodules": [
+        {
+          "id": "1.1",
+          "title": "📝 Introduction",
+          "type": "text",
+          "body": "Before I build anything lasting, I need a compass — something internal that points me toward meaning, happiness, and the things that excite me to get out of bed in the morning. This isn't about finding my ultimate purpose right now. It's about pointing myself toward the things that matter most to me.\n\nThis module will help me define what fulfillment actually means to me, reconnect with what lights me up, and write a mission statement that feels authentic and true to myself — whether I whisper it quietly or wear it boldly. Clarity doesn't arrive all at once; it's created by asking the right questions and allowing answers to emerge one by one."
+        },
+        {
+          "id": "1.2",
+          "title": "🔍 Define Fulfillment, My Way",
+          "type": "reflection",
+          "prompts": [
+            "What is something I've done that completely lights me up?",
+            "How do I feel when I do it?",
+            "Where in my body do I feel that energy or sense of rightness?"
+          ]
+        },
+        {
+          "id": "1.3",
+          "title": "🌀 Assess My Season of Life",
+          "type": "multiselect-reflection",
+          "options": [
+            "🌱 Starting Fresh",
+            "🧗‍♂️ Building",
+            "💔 Healing",
+            "✨ Expanding",
+            "🌊 Deepening",
+            "🌀 Transitioning",
+            "❓ Other"
+          ],
+          "prompts": [
+            "What is this season asking of me right now?",
+            "Do I want to stay in this season for a while, or am I ready to move through it?",
+            "What are a few things I can do (or stop doing) to honor that decision?"
+          ]
+        },
+        {
+          "id": "1.4",
+          "title": "💎 Name My Core Values",
+          "type": "value-select-reflection",
+          "categories": [
+            "Core Values",
+            "Mental & Emotional Values",
+            "Physical & Wellness Values",
+            "Love & Connection Values",
+            "Spiritual & Purpose-Driven Values",
+            "Personal Growth & Self-Mastery",
+            "Direction & Drive",
+            "Life Design / Lifestyle Values",
+            "Leadership & Impact"
+          ],
+          "prompts": [
+            "Which values feel most alive for me right now?",
+            "Which ones do I crave more of?",
+            "If I had to live out one value this week — which one would it be, and why?"
+          ]
+        },
+        {
+          "id": "1.5",
+          "title": "✍️ Draft My Mission Statement",
+          "type": "mission-builder",
+          "starter": "I help / support / create / offer [who] [what] so they can [desired outcome].",
+          "examples": [
+            "I help women rediscover confidence after burnout through mindful routines.",
+            "I create moments that help couples reconnect and feel alive again.",
+            "I support people in living simpler, more meaningful lives through intentional travel and self-connection."
+          ],
+          "prompts": [
+            "What do I feel most proud to give, create, or share with the world?",
+            "What have others always come to me for?",
+            "Who do I feel most called to serve — or create for?"
+          ]
+        },
+        {
+          "id": "1.6",
+          "title": "🌅 Feel into Direction (Not Just Goals)",
+          "type": "visualization",
+          "prompts": [
+            "Where am I living?",
+            "What am I doing in the mornings?",
+            "How do I feel in my body and in my work?",
+            "What have I let go of?",
+            "What have I added more of?"
+          ]
+        },
+        {
+          "id": "1.7",
+          "title": "💭 Mindful Moment",
+          "type": "single-reflection",
+          "prompt": "When I imagine my ideal day, what is the feeling I most want to experience — and how can I bring 5% more of that into tomorrow?"
+        }
+      ]
+    }
+  ]
+}

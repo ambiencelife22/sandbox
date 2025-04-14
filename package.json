@@ -64,6 +64,7 @@
     "stripe": "^12.14.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
+    "tw-animate-css": "^1.2.5",
     "typescript": "4.9.3",
     "uuid": "^9.0.0"
   },

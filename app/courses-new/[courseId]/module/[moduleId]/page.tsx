@@ -1,20 +1,20 @@
-/* [moduleId].tsx */
+/* [moduleId]/page.tsx */
 
-import { notFound } from 'next/navigation'
 import { promises as fs } from 'fs'
 import path from 'path'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import CourseModulePage from '../../../components/CourseModulePage'
-
-export async function generateStaticParams() {
-  // Placeholder: You can dynamically generate static paths here later
-  return []
-}
 
 export default async function ModulePage({ params }: { params: { courseId: string; moduleId: string } }) {
   const { courseId, moduleId } = params
 
+  const normalizedCourseId = courseId
+    .replace(/-([a-z])/g, (_, char) => char.toUpperCase())
+    .replace(/^./, (char) => char.toUpperCase())
+
   try {
-    const filePath = path.join(process.cwd(), 'app/courses-new/data', `${courseId}.json`)
+    const filePath = path.join(process.cwd(), 'app/courses-new/data', `${normalizedCourseId}.json`)
     const fileContents = await fs.readFile(filePath, 'utf-8')
     const courseData = JSON.parse(fileContents)
 
@@ -23,11 +23,22 @@ export default async function ModulePage({ params }: { params: { courseId: strin
 
     return (
       <CourseModulePage title={module.title} subtitle={module.description}>
-        {/* TODO: Load dynamic inputs, journal prompts, and saved data */}
-        <p className="text-sm text-gray-400">Module content coming soon...</p>
+        <ul className='space-y-3'>
+          {module.submodules?.map((sub: any) => (
+            <li key={sub.id}>
+              <Link
+                className='text-blue-600 underline hover:text-blue-800'
+                href={`/courses-new/${courseId}/module/${moduleId}/submodule/${sub.id}`}
+              >
+                {sub.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </CourseModulePage>
     )
-  } catch (error) {
+  } catch (err) {
+    console.error(err)
     return notFound()
   }
 }

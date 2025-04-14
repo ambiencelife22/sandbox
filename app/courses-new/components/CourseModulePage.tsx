@@ -17,6 +17,10 @@ export type Module = {
   description: string
 }
 
+interface CourseModulesProps {
+  courseId: string   // TitleCase - used for file loading
+  routeId: string    // kebab-case - used for URL construction
+}
 
 export default function CourseModulePage({ title, subtitle, children }: CourseModulePageProps) {
   return (

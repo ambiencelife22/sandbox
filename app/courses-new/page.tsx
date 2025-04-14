@@ -28,24 +28,26 @@ const courseList = [
 
 export default function CoursesNewIndex() {
   return (
-    <div className='max-w-5xl mx-auto p-6'>
-      <h1 className='text-3xl font-bold mb-6'>🌱 Explore Your Courses</h1>
+    <div className='min-h-screen flex items-center justify-center'>
+      <div className='max-w-5xl p-6'>
+        <h1 className='text-3xl font-bold mb-6 text-center'>🌱 Explore Your Courses</h1>
 
-      <div className='grid md:grid-cols-2 gap-6'>
-        {courseList.map((course) => (
-          <Card key={course.id} className='hover:shadow-md transition'>
-            <CardContent className='p-6 space-y-3'>
-              <h2 className='text-xl font-semibold flex items-center gap-2'>
-                <span>{course.emoji}</span> {course.title}
-              </h2>
-              <p className='text-gray-600 text-sm'>{course.subtitle}</p>
-              <p className='text-gray-500 text-sm'>{course.description}</p>
-              <Button asChild>
-                <Link href={`/courses-new/${course.id}`}>Enter Course</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+        <div className='grid md:grid-cols-2 gap-6'>
+          {courseList.map((course) => (
+            <Card key={course.id} className='hover:shadow-md transition'>
+              <CardContent className='p-6 space-y-3'>
+                <h2 className='text-xl font-semibold flex items-center gap-2'>
+                  <span>{course.emoji}</span> {course.title}
+                </h2>
+                <p className='text-gray-600 text-sm'>{course.subtitle}</p>
+                <p className='text-gray-500 text-sm'>{course.description}</p>
+                <Button asChild>
+                  <Link href={`/courses-new/${course.id}`}>Enter Course</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   )
