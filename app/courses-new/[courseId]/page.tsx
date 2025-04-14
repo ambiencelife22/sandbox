@@ -2,8 +2,15 @@
 
 import CourseModules from '../components/CourseModules'
 
-export default async function CoursePage(props: { params: { courseId: string } }) {
-  const { courseId } = props.params
+type PageProps = {
+  params: {
+    courseId: string
+    moduleId: string
+  }
+}
+
+export default async function ModulePage({ params }: PageProps) {
+  const { courseId, moduleId } = params
 
   const normalizedId = courseId
     .replace(/-([a-z])/g, (_, char) => char.toUpperCase())
