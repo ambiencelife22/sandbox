@@ -42,7 +42,13 @@ export default async function SubmodulePage({ courseId, moduleId, submoduleId }:
 
     return (
       <CourseModulePage title={current.title} subtitle={stepText}>
-        <SectionRenderer section={current} />
+        <SectionRenderer
+          section={current}
+          courseId={courseId}
+          moduleId={moduleId}
+          submoduleId={submoduleId}
+        />
+
 
         <div className='pt-4'>
           <Link href={`/courses-new/${courseId}/module/${moduleId}`}>
