@@ -1,6 +1,8 @@
 /* [courseId]/page.tsx */
 import CourseOverview from './components/CourseOverview'
 
-export default function Page({ params }: { params: { courseId: string } }) {
-  return <CourseOverview courseId={params.courseId} />
+export default async function Page(props: any) {
+  const { courseId } = props.params
+
+  return await CourseOverview({ courseId })
 }
