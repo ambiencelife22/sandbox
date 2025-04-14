@@ -1,4 +1,5 @@
 /* [courseId]/module/[moduleId]/components/CourseOverview.tsx */
+
 import { promises as fs } from 'fs'
 import path from 'path'
 import Link from 'next/link'
@@ -31,9 +32,13 @@ export default async function ModuleOverview({ courseId, moduleId }: ModuleOverv
 
     return (
       <CourseModulePage title={module.title} subtitle={module.description}>
-        <div className='mb-6'>
+        <div className='mb-6 space-y-3 print:hidden'>
           <Link href={`/courses-new/${courseId}`}>
             <Button variant='outline'>← Back to Course</Button>
+          </Link>
+          <br />
+          <Link href={`/courses-new/${courseId}/module/${moduleId}/review`}>
+            <Button variant='default'>🧾 Review This Module</Button>
           </Link>
         </div>
 

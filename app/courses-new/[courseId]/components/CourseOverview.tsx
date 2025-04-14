@@ -29,10 +29,21 @@ export default async function CourseOverview({ courseId }: CourseOverviewProps) 
 
     return (
       <div className='p-6 max-w-5xl mx-auto'>
-        <h1 className='text-3xl font-bold mb-4 capitalize'>
-          {courseId.replace(/-/g, ' ')} Course
-        </h1>
-
+        <div className='flex justify-between items-center mb-4'>
+          <h1 className='text-3xl font-bold capitalize'>
+            {courseId.replace(/-/g, ' ')} Course
+          </h1>
+    
+          <Link
+            href={`/courses-new/${courseId}/review`}
+            className='print:hidden'
+          >
+            <span className='inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded'>
+              📘 Review Full Course
+            </span>
+          </Link>
+        </div>
+    
         <Tabs defaultValue={activeModule}>
           <TabsList className='grid grid-cols-2 md:grid-cols-4 gap-2'>
             {modules.map((module: any) => (
@@ -41,7 +52,7 @@ export default async function CourseOverview({ courseId }: CourseOverviewProps) 
               </TabsTrigger>
             ))}
           </TabsList>
-
+    
           {modules.map((module: any) => (
             <TabsContent key={module.id} value={module.id}>
               <Card className='mt-4'>
@@ -60,7 +71,7 @@ export default async function CourseOverview({ courseId }: CourseOverviewProps) 
           ))}
         </Tabs>
       </div>
-    )
+    )    
   } catch (error) {
     console.error('CourseOverview load error:', error)
     return <div className='text-red-600'>Error loading course data</div>
