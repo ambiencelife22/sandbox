@@ -2,18 +2,12 @@
 
 import SubmodulePage from './components/SubmodulePage'
 
-export default async function Page({
-  params,
-}: {
-  params: {
-    courseId: string
-    moduleId: string
-    submoduleId: string
-  }
-}) {
+export default async function Page(props: any) {
+  const { courseId, moduleId, submoduleId } = props.params
+
   return await SubmodulePage({
-    courseId: params.courseId,
-    moduleId: params.moduleId,
-    submoduleId: params.submoduleId,
+    courseId,
+    moduleId,
+    submoduleId,
   })
 }
