@@ -1,6 +1,8 @@
+/* SectionRenderer.tsx */
+
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
@@ -110,6 +112,52 @@ export default function SectionRenderer({
     saveResponse(courseId, moduleId, submoduleId, sectionId, response)
   }
 
+  useEffect(() => {
+    const prefix = `reflection-${courseId}-${moduleId}-${submoduleId}`
+
+    const preload = () => {
+      const newResponses: Record<string, string> = {}
+      const newMulti: Record<string, boolean> = {}
+      const newRatings: Record<string, number> = {}
+
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith(prefix)) {
+          const stored = localStorage.getItem(key)
+          if (!stored) return
+
+          try {
+            const parsed = JSON.parse(stored)
+            const { sectionId, response } = parsed
+
+            if (
+              section.type === 'multiselect-reflection' &&
+              section.options.includes(sectionId.replace('option-', ''))
+            ) {
+              newMulti[sectionId.replace('option-', '')] = response === 'true'
+            } else if (
+              section.type === 'rating-reflection' &&
+              sectionId.startsWith('rating-')
+            ) {
+              newRatings[sectionId.replace('rating-', '')] = parseInt(response)
+            } else {
+              newResponses[sectionId] = response
+            }
+          } catch (err) {
+            console.warn('Error parsing localStorage preload', err)
+          }
+        }
+      })
+
+      setResponses(newResponses)
+      setMultiSelect(newMulti)
+      setRatings(newRatings)
+    }
+
+    preload()
+  }, [courseId, moduleId, submoduleId, section])
+
+  // ----- Rendering Logic -----
+
   switch (section.type) {
     case 'text':
       return (
@@ -157,7 +205,6 @@ export default function SectionRenderer({
                     saveResponse(courseId, moduleId, submoduleId, `option-${opt}`, String(checked))
                   }}
                 />
-
                 <Label>{opt}</Label>
               </div>
             ))}
@@ -259,7 +306,7 @@ export default function SectionRenderer({
                   max={10}
                   step={1}
                   onValueChange={([value]) => {
-                    setRatings({ ...ratings, [area]: value })
+                    setRatings((prev) => ({ ...prev, [area]: value }))
                     saveResponse(courseId, moduleId, submoduleId, `rating-${area}`, String(value))
                   }}
                 />
