@@ -1,6 +1,13 @@
-import CourseModules from '../components/CourseModules.js'
+/* [courseId]/page.tsx */
+import CourseModules from '../components/CourseModules'
 
-export default async function Page({ params }) {
+export default async function Page({
+  params,
+}: {
+  params: {
+    courseId: string
+  }
+}) {
   const { courseId } = params
 
   const normalizedId = courseId

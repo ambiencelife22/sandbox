@@ -1,14 +1,24 @@
+/* /app/courses-new/[courseId]/module/[moduleId]/submodule/[submoduleId]/page.tsx */
+
 import { notFound } from 'next/navigation'
 import { promises as fs } from 'fs'
 import { motion } from 'framer-motion'
 import path from 'path'
 import Link from 'next/link'
 
-import CourseModulePage from '@/app/courses-new/components/CourseModulePage.js'
-import SectionRenderer from '@/app/courses-new/components/SectionRenderer.js'
-import { Button } from '@/components/ui/button.js'
+import CourseModulePage from '@/app/courses-new/components/CourseModulePage'
+import SectionRenderer from '@/app/courses-new/components/SectionRenderer'
+import { Button } from '@/components/ui/button'
 
-export default async function Page({ params }) {
+export default async function Page({
+  params,
+}: {
+  params: {
+    courseId: string
+    moduleId: string
+    submoduleId: string
+  }
+}) {
   const { courseId, moduleId, submoduleId } = params
 
   const normalizedCourseId = courseId
@@ -24,11 +34,11 @@ export default async function Page({ params }) {
     const fileContents = await fs.readFile(filePath, 'utf-8')
     const courseData = JSON.parse(fileContents)
 
-    const module = courseData.modules.find((m) => m.id === moduleId)
+    const module = courseData.modules.find((m: any) => m.id === moduleId)
     if (!module) return notFound()
 
     const submodules = module.submodules
-    const currentIndex = submodules.findIndex((s) => s.id === submoduleId)
+    const currentIndex = submodules.findIndex((s: any) => s.id === submoduleId)
     const current = submodules[currentIndex]
     if (!current) return notFound()
 
