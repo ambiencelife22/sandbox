@@ -6,7 +6,14 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CourseModulePage from '../../../components/CourseModulePage'
 
-export default async function ModulePage({ params }: { params: { courseId: string; moduleId: string } }) {
+type PageProps = {
+  params: {
+    courseId: string
+    moduleId: string
+  }
+}
+
+export default async function ModulePage({ params }: PageProps) {
   const { courseId, moduleId } = params
 
   const normalizedCourseId = courseId
@@ -14,7 +21,11 @@ export default async function ModulePage({ params }: { params: { courseId: strin
     .replace(/^./, (char) => char.toUpperCase())
 
   try {
-    const filePath = path.join(process.cwd(), 'app/courses-new/data', `${normalizedCourseId}.json`)
+    const filePath = path.join(
+      process.cwd(),
+      'app/courses-new/data',
+      `${normalizedCourseId}.json`
+    )
     const fileContents = await fs.readFile(filePath, 'utf-8')
     const courseData = JSON.parse(fileContents)
 
