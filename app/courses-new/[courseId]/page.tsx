@@ -2,13 +2,13 @@
 
 import CourseModules from '../components/CourseModules'
 
-type PageProps = {
+type CoursePageParams = {
   params: {
     courseId: string
   }
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: CoursePageParams) {
   const { courseId } = params
 
   const normalizedId = courseId

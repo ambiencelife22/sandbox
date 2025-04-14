@@ -19,7 +19,7 @@ import {
 } from '../../../../utils/(calcs)/_ActivityProgressCalculations'
 
 // Update the interface so that `params` is a promise returning an object with `activitiesCategoryParam`
-interface PageProps {
+interface ActivitiesCategoryParamPageProps {
     params: Promise<{
         activitiesCategoryParam: string
     }>
@@ -65,7 +65,7 @@ interface CategoryData {
     meta: CategoryMeta[]
 }
 
-const CategoryPage: FunctionComponent<PageProps> = ({ params }) => {
+const CategoryPage: FunctionComponent<ActivitiesCategoryParamPageProps> = ({ params }) => {
     // Unwrap the params promise to access activitiesCategoryParam
     const { activitiesCategoryParam } = React.use(params)
 

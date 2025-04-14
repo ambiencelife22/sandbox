@@ -21,7 +21,7 @@ interface NebulaParams {
   NebulaParam: string
 }
 
-interface PageProps {
+interface NebulaPageProps {
   params: Promise<NebulaParams>
 }
 
@@ -201,7 +201,7 @@ const fetchNebulaData = [
   },
 ]
 
-function NebulaPage({ params }: PageProps) {
+function NebulaPage({ params }: NebulaPageProps) {
   // Unwrap the promise using React.use()
   const { NebulaParam } = React.use(params)
 
