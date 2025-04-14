@@ -18,9 +18,11 @@ export default async function Page(props: any) {
       title: s.title,
     })) || []
 
-  return ModuleReview({
-    courseId: normalizedCourseId,
-    moduleId,
-    submodules,
-  })
+    return (
+      <ModuleReview
+        courseId={normalizedCourseId}
+        moduleId={moduleId}
+        submodules={submodules}
+      />
+    )    
 }

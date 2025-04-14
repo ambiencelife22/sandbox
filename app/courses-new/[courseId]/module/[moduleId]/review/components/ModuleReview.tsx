@@ -5,6 +5,7 @@
 import { useEffect, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
 
 interface ModuleReviewProps {
   courseId: string
@@ -43,13 +44,49 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
       }
     })
 
-    // Add blanks for any submodules without storage data
+    // Add blank groups for submodules with no data
     submodules.forEach((sub) => {
       if (!grouped[sub.id]) grouped[sub.id] = []
     })
 
     setData(grouped)
   }, [courseId, moduleId, submodules])
+
+  const handlePrint = () => {
+    window.print()
+  }
+
+  const handleDownload = () => {
+    const lines: string[] = []
+
+    lines.push(`Module Review: ${courseId} / Module ${moduleId}`)
+    lines.push(`Generated on: ${new Date().toLocaleString()}`)
+    lines.push('='.repeat(50))
+
+    submodules.forEach((sub) => {
+      lines.push(`\n${sub.title}`)
+      lines.push('-'.repeat(sub.title.length))
+
+      const entries = data[sub.id] || []
+      if (entries.length === 0) {
+        lines.push('No responses saved.')
+      }
+
+      entries
+        .sort((a, b) => a.sectionId.localeCompare(b.sectionId))
+        .forEach((entry) => {
+          const label = entry.sectionId
+          const response = entry.response?.trim() || "I didn’t respond to this."
+          lines.push(`\n${label}\n→ ${response}`)
+        })
+    })
+
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = `ModuleReview-${courseId}-${moduleId}.txt`
+    link.click()
+  }
 
   return (
     <div className='max-w-4xl mx-auto p-6 space-y-6 print:bg-white'>
@@ -83,6 +120,16 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
           </CardContent>
         </Card>
       ))}
+
+      {/* Button Bar */}
+      <div className='pt-8 flex flex-col md:flex-row gap-4 justify-end print:hidden'>
+        <Button variant='outline' onClick={handleDownload}>
+          📄 Download as .txt
+        </Button>
+        <Button onClick={handlePrint}>
+          🖨️ Print
+        </Button>
+      </div>
     </div>
   )
 }
