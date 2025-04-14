@@ -1,18 +1,6 @@
 /* [courseId]/page.tsx */
-import CourseModules from '../components/CourseModules'
+import CourseOverview from './components/CourseOverview'
 
-export default async function Page({
-  params,
-}: {
-  params: {
-    courseId: string
-  }
-}) {
-  const { courseId } = params
-
-  const normalizedId = courseId
-    .replace(/-([a-z])/g, (_, char) => char.toUpperCase())
-    .replace(/^./, (char) => char.toUpperCase())
-
-  return await CourseModules({ courseId: normalizedId, routeId: courseId })
+export default function Page({ params }: { params: { courseId: string } }) {
+  return <CourseOverview courseId={params.courseId} />
 }
