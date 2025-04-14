@@ -96,6 +96,74 @@
           "prompt": "When I imagine my ideal day, what is the feeling I most want to experience — and how can I bring 5% more of that into tomorrow?"
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "Foundations & Friction",
+      "description": "Honest inventory, anchored awareness",
+      "submodules": [
+        {
+          "id": "2.1",
+          "title": "📝 Introduction",
+          "type": "text",
+          "body": "Before I can build what I want, I need to understand where I actually am.\n\nThis module is about getting honest with myself — without shame, without sugarcoating. Just clarity. I’m taking a snapshot of the life I’m currently living so I can gently sort through what’s working, what’s not, and what needs attention next.\n\nThis isn’t about fixing everything at once. It’s about seeing clearly, naming the friction points, and starting to design from a place of self-awareness instead of self-avoidance.\n\nThis is where real change begins."
+        },
+        {
+          "id": "2.2",
+          "title": "🔍 Take a Clarity Snapshot",
+          "type": "rating-reflection",
+          "areas": [
+            "Health & Vitality",
+            "Emotional Stability & Resilience",
+            "Purpose & Meaning",
+            "Self-Trust & Integrity",
+            "Love & Relationships",
+            "Creativity & Expression",
+            "Freedom & Flexibility",
+            "Adventure & Play",
+            "Spiritual Connection / Inner Peace",
+            "Time & Energy Alignment",
+            "Financial Flow & Stability"
+          ],
+          "prompt": "Which 2–3 areas feel like they need the most attention right now — and why?"
+        },
+        {
+          "id": "2.3",
+          "title": "🔥 Identify My Friction Points",
+          "type": "reflection",
+          "prompts": [
+            "What am I tolerating that I know isn’t healthy for me?",
+            "Where am I shrinking, hesitating, or holding back my voice?",
+            "What are the recurring frustrations or patterns that I keep brushing aside?"
+          ]
+        },
+        {
+          "id": "2.4",
+          "title": "🌱 Fuel Check: What’s Supporting Me?",
+          "type": "reflection",
+          "prompts": [
+            "What feels genuinely good right now?",
+            "Where do I feel most proud of how I’ve been showing up?",
+            "Who or what is energizing me — and how can I nurture that?"
+          ]
+        },
+        {
+          "id": "2.5",
+          "title": "🔄 The Crossroads: What Needs to Shift?",
+          "type": "reflection",
+          "prompts": [
+            "What choices do I need to make right now to move in a healthier direction?",
+            "What’s one friction point I can start resolving this month — with grace, not pressure?",
+            "If I were giving honest advice to a friend in my shoes, what would I say?"
+          ]
+        },
+        {
+          "id": "2.6",
+          "title": "💭 Mindful Moment",
+          "type": "single-reflection",
+          "prompt": "Where in my life am I choosing comfort over alignment — and what would a brave next step look like?"
+        }
+      ]
     }
   ]
 }

@@ -4,6 +4,7 @@ import path from 'path'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CourseModulePage from '@/app/courses-new/components/CourseModulePage'
+import { Button } from '@/components/ui/button'
 
 interface ModuleOverviewProps {
   courseId: string
@@ -30,6 +31,12 @@ export default async function ModuleOverview({ courseId, moduleId }: ModuleOverv
 
     return (
       <CourseModulePage title={module.title} subtitle={module.description}>
+        <div className='mb-6'>
+          <Link href={`/courses-new/${courseId}`}>
+            <Button variant='outline'>← Back to Course</Button>
+          </Link>
+        </div>
+
         <ul className='space-y-3'>
           {module.submodules?.map((sub: any) => (
             <li key={sub.id}>
