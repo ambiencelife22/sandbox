@@ -1,4 +1,4 @@
-/* [moduleId]/page.tsx */
+/* /app/courses-new/[courseId]/module/[moduleId]/page.tsx */
 
 import { promises as fs } from 'fs'
 import path from 'path'
@@ -6,14 +6,14 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CourseModulePage from '../../../components/CourseModulePage'
 
-type PageProps = {
+export default async function Page({
+  params,
+}: {
   params: {
     courseId: string
     moduleId: string
   }
-}
-
-export default async function ModulePage({ params }: PageProps) {
+}) {
   const { courseId, moduleId } = params
 
   const normalizedCourseId = courseId

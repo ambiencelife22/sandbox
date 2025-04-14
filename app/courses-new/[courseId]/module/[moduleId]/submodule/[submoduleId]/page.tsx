@@ -10,15 +10,15 @@ import CourseModulePage from '@/app/courses-new/components/CourseModulePage'
 import SectionRenderer from '@/app/courses-new/components/SectionRenderer'
 import { Button } from '@/components/ui/button'
 
-type PageProps = {
+export default async function Page({
+  params,
+}: {
   params: {
     courseId: string
     moduleId: string
     submoduleId: string
   }
-}
-
-export default async function SubmodulePage({ params }: PageProps) {
+}) {
   const { courseId, moduleId, submoduleId } = params
 
   const normalizedCourseId = courseId
@@ -48,32 +48,34 @@ export default async function SubmodulePage({ params }: PageProps) {
 
     return (
       <CourseModulePage title={current.title} subtitle={stepText}>
-  <SectionRenderer section={current} />
+        <SectionRenderer section={current} />
 
-  <div className='pt-4'>
-    <Link href={`/courses-new/${courseId}/module/${moduleId}`}>
-      <Button variant='ghost'>← Back to Module Overview</Button>
-    </Link>
-  </div>
+        <div className='pt-4'>
+          <Link href={`/courses-new/${courseId}/module/${moduleId}`}>
+            <Button variant='ghost'>← Back to Module Overview</Button>
+          </Link>
+        </div>
 
-  <div className='pt-6 flex justify-between'>
-    {prevSubmodule ? (
-      <Link
-        href={`/courses-new/${courseId}/module/${moduleId}/submodule/${prevSubmodule.id}`}
-      >
-        <Button variant='outline'>← {prevSubmodule.title}</Button>
-      </Link>
-    ) : <div />}
+        <div className='pt-6 flex justify-between'>
+          {prevSubmodule ? (
+            <Link
+              href={`/courses-new/${courseId}/module/${moduleId}/submodule/${prevSubmodule.id}`}
+            >
+              <Button variant='outline'>← {prevSubmodule.title}</Button>
+            </Link>
+          ) : (
+            <div />
+          )}
 
-    {nextSubmodule && (
-      <Link
-        href={`/courses-new/${courseId}/module/${moduleId}/submodule/${nextSubmodule.id}`}
-      >
-        <Button>Next: {nextSubmodule.title} →</Button>
-      </Link>
-    )}
-  </div>
-</CourseModulePage>
+          {nextSubmodule && (
+            <Link
+              href={`/courses-new/${courseId}/module/${moduleId}/submodule/${nextSubmodule.id}`}
+            >
+              <Button>Next: {nextSubmodule.title} →</Button>
+            </Link>
+          )}
+        </div>
+      </CourseModulePage>
     )
   } catch (error) {
     console.error('Submodule page error:', error)
