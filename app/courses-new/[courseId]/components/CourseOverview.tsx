@@ -25,7 +25,8 @@ export default async function CourseOverview({ courseId }: CourseOverviewProps) 
     const fileContents = await fs.readFile(filePath, 'utf-8')
     const courseData = JSON.parse(fileContents)
     const modules = courseData.modules || []
-    const activeModule = modules[0]?.id || ''
+    const activeModules = modules.filter((m: any) => m.active !== 'no')
+    const activeModule = activeModules[0]?.id || ''
 
     return (
       <div className='p-6 max-w-5xl mx-auto'>
@@ -46,14 +47,14 @@ export default async function CourseOverview({ courseId }: CourseOverviewProps) 
     
         <Tabs defaultValue={activeModule}>
           <TabsList className='grid grid-cols-2 md:grid-cols-4 gap-2'>
-            {modules.map((module: any) => (
+            {activeModules.map((module: any) => (
               <TabsTrigger key={module.id} value={module.id}>
                 {module.title}
               </TabsTrigger>
             ))}
           </TabsList>
     
-          {modules.map((module: any) => (
+          {activeModules.map((module: any) => (
             <TabsContent key={module.id} value={module.id}>
               <Card className='mt-4'>
                 <CardContent className='space-y-4'>

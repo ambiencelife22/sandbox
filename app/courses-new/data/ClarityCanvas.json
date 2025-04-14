@@ -4,6 +4,7 @@
       "id": "1",
       "title": "The Inner Compass",
       "description": "Define your version of fulfillment and create your life mission.",
+      "active": "yes",
       "submodules": [
         {
           "id": "1.1",
@@ -101,6 +102,7 @@
       "id": "2",
       "title": "Foundations & Friction",
       "description": "Honest inventory, anchored awareness",
+      "active": "no",
       "submodules": [
         {
           "id": "2.1",
