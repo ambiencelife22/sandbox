@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 interface ModuleReviewProps {
   courseId: string
@@ -44,7 +45,6 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
       }
     })
 
-    // Add blank groups for submodules with no data
     submodules.forEach((sub) => {
       if (!grouped[sub.id]) grouped[sub.id] = []
     })
@@ -52,9 +52,7 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
     setData(grouped)
   }, [courseId, moduleId, submodules])
 
-  const handlePrint = () => {
-    window.print()
-  }
+  const handlePrint = () => window.print()
 
   const handleDownload = () => {
     const lines: string[] = []
@@ -76,7 +74,7 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
         .sort((a, b) => a.sectionId.localeCompare(b.sectionId))
         .forEach((entry) => {
           const label = entry.sectionId
-          const response = entry.response?.trim() || "I didn’t respond to this."
+          const response = entry.response?.trim() || 'I didn’t respond to this.'
           lines.push(`\n${label}\n→ ${response}`)
         })
     })
@@ -90,6 +88,14 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
 
   return (
     <div className='max-w-4xl mx-auto p-6 space-y-6 print:bg-white'>
+      {/* 🔙 Back to Module Overview */}
+      <Link
+        href={`/courses-new/${courseId}/module/${moduleId}`}
+        className='inline-block mb-4 print:hidden'
+      >
+        <Button variant='ghost'>← Back to Module Overview</Button>
+      </Link>
+
       <h1 className='text-3xl font-bold mb-2'>🧾 Module Review</h1>
       <p className='text-gray-600 mb-6'>
         Course: <strong>{courseId}</strong> | Module: <strong>{moduleId}</strong>
@@ -110,7 +116,7 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
                       <strong>{entry.sectionId}</strong>
                     </p>
                     <p className='text-gray-800 whitespace-pre-wrap'>
-                      {entry.response?.trim() || "I didn’t respond to this."}
+                      {entry.response?.trim() || 'I didn’t respond to this.'}
                     </p>
                   </div>
                 ))
@@ -126,9 +132,7 @@ export default function ModuleReview({ courseId, moduleId, submodules }: ModuleR
         <Button variant='outline' onClick={handleDownload}>
           📄 Download as .txt
         </Button>
-        <Button onClick={handlePrint}>
-          🖨️ Print
-        </Button>
+        <Button onClick={handlePrint}>🖨️ Print</Button>
       </div>
     </div>
   )

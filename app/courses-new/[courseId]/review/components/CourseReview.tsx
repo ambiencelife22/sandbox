@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 interface CourseReviewProps {
   courseId: string
@@ -88,6 +89,11 @@ export default function CourseReview({ courseId, modules }: CourseReviewProps) {
 
   return (
     <div className='max-w-5xl mx-auto p-6 space-y-6'>
+      {/* 🔙 Back to Course button (hidden on print) */}
+      <Link href={`/courses-new/${courseId}`} className='inline-block mb-4 print:hidden'>
+        <Button variant='ghost'>← Back to Course</Button>
+      </Link>
+
       <h1 className='text-3xl font-bold mb-2'>📘 Full Course Review</h1>
       <p className='text-gray-600 mb-6'>
         All responses recorded in your <strong>{courseId}</strong> journey.
@@ -129,7 +135,7 @@ export default function CourseReview({ courseId, modules }: CourseReviewProps) {
         </div>
       ))}
 
-      {/* Button bar */}
+      {/* 📄 Download + 🖨️ Print (hidden on print) */}
       <div className='pt-8 flex flex-col md:flex-row gap-4 justify-end print:hidden'>
         <Button variant='outline' onClick={handleDownload}>
           📄 Download Full Course
