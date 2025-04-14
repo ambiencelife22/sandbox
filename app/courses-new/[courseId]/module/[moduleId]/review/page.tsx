@@ -3,9 +3,24 @@
 import ModuleReview from './components/ModuleReview'
 import clarityCanvas from '@/app/courses-new/data/ClarityCanvas.json'
 
-export default function Page({ params }: { params: { courseId: string; moduleId: string } }) {
-  const module = clarityCanvas.modules.find((m) => m.id === params.moduleId)
-  const submodules = module?.submodules.map((s) => ({ id: s.id, title: s.title })) || []
+export default async function Page(props: any) {
+  const { courseId, moduleId } = props.params
 
-  return <ModuleReview courseId={params.courseId} moduleId={params.moduleId} submodules={submodules} />
+  const normalizedCourseId = courseId
+    .replace(/-([a-z])/g, (_: any, char: string) => char.toUpperCase())
+    .replace(/^./, (char: string) => char.toUpperCase())
+
+  const module = clarityCanvas.modules.find((m) => m.id === moduleId)
+
+  const submodules =
+    module?.submodules?.map((s) => ({
+      id: s.id,
+      title: s.title,
+    })) || []
+
+  return ModuleReview({
+    courseId: normalizedCourseId,
+    moduleId,
+    submodules,
+  })
 }
