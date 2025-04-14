@@ -10,11 +10,15 @@ import CourseModulePage from '@/app/courses-new/components/CourseModulePage'
 import SectionRenderer from '@/app/courses-new/components/SectionRenderer'
 import { Button } from '@/components/ui/button'
 
-export default async function SubmodulePage({
-  params,
-}: {
-  params: { courseId: string; moduleId: string; submoduleId: string }
-}) {
+type PageProps = {
+  params: {
+    courseId: string
+    moduleId: string
+    submoduleId: string
+  }
+}
+
+export default async function SubmodulePage({ params }: PageProps) {
   const { courseId, moduleId, submoduleId } = params
 
   const normalizedCourseId = courseId
