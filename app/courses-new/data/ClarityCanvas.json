@@ -1,0 +1,26 @@
+
+{
+    "modules": [
+      {
+        "id": "1",
+        "title": "The Inner Compass",
+        "description": "Define your version of fulfillment and create your life mission."
+      },
+      {
+        "id": "2",
+        "title": "Foundations & Friction",
+        "description": "Map your current state and uncover what’s fueling or draining you."
+      },
+      {
+        "id": "3",
+        "title": "Money Flow & Life Design",
+        "description": "Clarify your finances and design your lifestyle with intention."
+      },
+      {
+        "id": "4",
+        "title": "Momentum & Meaning",
+        "description": "Create rhythms, habits, and checkpoints to stay aligned."
+      }
+    ]
+  }
+  
