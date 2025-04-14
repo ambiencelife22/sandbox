@@ -2,12 +2,13 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { Button } from '@/components/ui/button'
+import clsx from 'clsx'
 
 const API_URL_LINK = 'https://api.example.com/save-response'
 
@@ -67,22 +68,8 @@ interface SectionRendererProps {
   submoduleId: string
 }
 
-async function saveResponse(
-  courseId: string,
-  moduleId: string,
-  submoduleId: string,
-  sectionId: string,
-  response: string
-) {
-  const payload = {
-    courseId,
-    moduleId,
-    submoduleId,
-    sectionId,
-    response,
-    timestamp: new Date().toISOString(),
-  }
-
+async function saveResponse(courseId: string, moduleId: string, submoduleId: string, sectionId: string, response: string) {
+  const payload = { courseId, moduleId, submoduleId, sectionId, response, timestamp: new Date().toISOString() }
   const key = `reflection-${courseId}-${moduleId}-${submoduleId}-${sectionId}`
   localStorage.setItem(key, JSON.stringify(payload))
 
@@ -97,12 +84,7 @@ async function saveResponse(
   }
 }
 
-export default function SectionRenderer({
-  section,
-  courseId,
-  moduleId,
-  submoduleId,
-}: SectionRendererProps) {
+export default function SectionRenderer({ section, courseId, moduleId, submoduleId }: SectionRendererProps) {
   const [responses, setResponses] = useState<Record<string, string>>({})
   const [multiSelect, setMultiSelect] = useState<Record<string, boolean>>({})
   const [ratings, setRatings] = useState<Record<string, number>>({})
@@ -114,217 +96,259 @@ export default function SectionRenderer({
 
   useEffect(() => {
     const prefix = `reflection-${courseId}-${moduleId}-${submoduleId}`
+    const newResponses: Record<string, string> = {}
+    const newMulti: Record<string, boolean> = {}
+    const newRatings: Record<string, number> = {}
 
-    const preload = () => {
-      const newResponses: Record<string, string> = {}
-      const newMulti: Record<string, boolean> = {}
-      const newRatings: Record<string, number> = {}
-
-      Object.keys(localStorage).forEach((key) => {
-        if (key.startsWith(prefix)) {
-          const stored = localStorage.getItem(key)
-          if (!stored) return
-
-          try {
-            const parsed = JSON.parse(stored)
-            const { sectionId, response } = parsed
-
-            if (
-              section.type === 'multiselect-reflection' &&
-              section.options.includes(sectionId.replace('option-', ''))
-            ) {
-              newMulti[sectionId.replace('option-', '')] = response === 'true'
-            } else if (
-              section.type === 'rating-reflection' &&
-              sectionId.startsWith('rating-')
-            ) {
-              newRatings[sectionId.replace('rating-', '')] = parseInt(response)
-            } else {
-              newResponses[sectionId] = response
-            }
-          } catch (err) {
-            console.warn('Error parsing localStorage preload', err)
+    Object.keys(localStorage).forEach((key) => {
+      if (key.startsWith(prefix)) {
+        const stored = localStorage.getItem(key)
+        if (!stored) return
+        try {
+          const { sectionId, response } = JSON.parse(stored)
+          if (section.type === 'multiselect-reflection' && section.options.includes(sectionId.replace('option-', ''))) {
+            newMulti[sectionId.replace('option-', '')] = response === 'true'
+          } else if (section.type === 'rating-reflection' && sectionId.startsWith('rating-')) {
+            newRatings[sectionId.replace('rating-', '')] = parseInt(response)
+          } else {
+            newResponses[sectionId] = response
           }
+        } catch (err) {
+          console.warn('Error loading localStorage', err)
         }
-      })
+      }
+    })
 
-      setResponses(newResponses)
-      setMultiSelect(newMulti)
-      setRatings(newRatings)
+    setResponses(newResponses)
+    setMultiSelect(newMulti)
+    setRatings(newRatings)
+  }, [section, courseId, moduleId, submoduleId])
+
+  // 🔄 Progress Tracking
+  const { completed, total } = useMemo(() => {
+    let completed = 0
+    let total = 0
+    const check = (val?: string) => !!val?.trim()
+
+    switch (section.type) {
+      case 'reflection':
+      case 'visualization':
+        total = section.prompts.length
+        completed = section.prompts.filter((p) => check(responses[p])).length
+        break
+      case 'multiselect-reflection':
+        total = section.prompts.length + section.options.length
+        completed = section.prompts.filter((p) => check(responses[p])).length
+        completed += section.options.filter((o) => multiSelect[o]).length
+        break
+      case 'single-reflection':
+        total = 1
+        completed = check(responses['single']) ? 1 : 0
+        break
+      case 'value-select-reflection':
+        total = section.categories.length + section.prompts.length
+        completed = section.categories.filter((c) => check(responses[c])).length
+        completed += section.prompts.filter((p) => check(responses[p])).length
+        break
+      case 'mission-builder':
+        total = section.prompts.length
+        completed = section.prompts.filter((p) => check(responses[p])).length
+        break
+      case 'rating-reflection':
+        total = section.areas.length + 1
+        completed = section.areas.filter((a) => ratings[a] > 0).length
+        if (check(responses['rating-prompt'])) completed++
+        break
     }
 
-    preload()
-  }, [courseId, moduleId, submoduleId, section])
+    return { completed, total }
+  }, [section, responses, multiSelect, ratings])
 
-  // ----- Rendering Logic -----
+  const percent = total > 0 ? Math.round((completed / total) * 100) : 0
 
-  switch (section.type) {
-    case 'text':
-      return (
-        <div className='space-y-2'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          <div className='text-gray-700 space-y-2'>
-            {section.body.split('\n').map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
+  // 🔘 UI helpers
+  const Check = ({ show }: { show: boolean }) => show ? <span className='ml-2 text-green-600'>✔️</span> : null
+
+  const ProgressBar = () => (
+    <div className='mb-4'>
+      <div className='h-2 rounded-full bg-gray-200 w-full overflow-hidden'>
+        <div
+          className='h-full bg-gradient-to-r from-gray-300 via-emerald-400 to-green-500 rounded-full transition-all'
+          style={{ width: `${percent}%` }}
+        />
+      </div>
+      {percent < 100 && (
+        <div className='mt-2 text-right'>
+          <Button size='sm' variant='ghost' onClick={markAsComplete}>
+            ✔️ Mark as Complete
+          </Button>
         </div>
-      )
+      )}
+    </div>
+  )
 
-    case 'reflection':
-    case 'visualization':
-      return (
+  // 🪄 Mark as complete logic
+  const markAsComplete = () => {
+    const updates: Record<string, string> = {}
+    const multi: Record<string, boolean> = {}
+    const rate: Record<string, number> = {}
+
+    if (section.type === 'reflection' || section.type === 'visualization') {
+      section.prompts.forEach((p) => {
+        if (!responses[p]) updates[p] = '✔️'
+      })
+    } else if (section.type === 'multiselect-reflection') {
+      section.options.forEach((o) => {
+        if (!multiSelect[o]) multi[o] = true
+      })
+      section.prompts.forEach((p) => {
+        if (!responses[p]) updates[p] = '✔️'
+      })
+    } else if (section.type === 'single-reflection') {
+      if (!responses['single']) updates['single'] = '✔️'
+    } else if (section.type === 'value-select-reflection') {
+      section.categories.forEach((c) => {
+        if (!responses[c]) updates[c] = '✔️'
+      })
+      section.prompts.forEach((p) => {
+        if (!responses[p]) updates[p] = '✔️'
+      })
+    } else if (section.type === 'mission-builder') {
+      section.prompts.forEach((p) => {
+        if (!responses[p]) updates[p] = '✔️'
+      })
+    } else if (section.type === 'rating-reflection') {
+      section.areas.forEach((a) => {
+        if (!ratings[a]) rate[a] = 10
+      })
+      if (!responses['rating-prompt']) updates['rating-prompt'] = '✔️'
+    }
+
+    setResponses((prev) => ({ ...prev, ...updates }))
+    setMultiSelect((prev) => ({ ...prev, ...multi }))
+    setRatings((prev) => ({ ...prev, ...rate }))
+
+    Object.entries(updates).forEach(([k, v]) => saveResponse(courseId, moduleId, submoduleId, k, v))
+    Object.entries(multi).forEach(([k]) => saveResponse(courseId, moduleId, submoduleId, `option-${k}`, 'true'))
+    Object.entries(rate).forEach(([k, v]) => saveResponse(courseId, moduleId, submoduleId, `rating-${k}`, String(v)))
+  }
+
+  // 🎨 Unified layout
+  return (
+    <div className='space-y-6'>
+      <ProgressBar />
+
+      <h3 className='text-xl font-semibold'>{section.title}</h3>
+
+      {section.type === 'text' && (
+        <div className='text-gray-700 space-y-2'>
+          {section.body.split('\n').map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      )}
+
+      {['reflection', 'visualization'].includes(section.type) && 'prompts' in section && (
         <div className='space-y-4'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          {section.prompts.map((q, i) => (
+          {section.prompts.map((p, i) => (
             <div key={i}>
-              <Label className='text-sm'>{q}</Label>
-              <Textarea
-                className='mt-1'
-                value={responses[q] || ''}
-                onChange={(e) => handleSave(q, e.target.value)}
-              />
+              <Label className='text-sm flex items-center'>{p}<Check show={!!responses[p]} /></Label>
+              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
             </div>
           ))}
         </div>
-      )
+      )}
 
-    case 'multiselect-reflection':
-      return (
+      {section.type === 'multiselect-reflection' && (
         <div className='space-y-4'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
           <div className='space-y-2'>
-            {section.options.map((opt, i) => (
-              <div key={i} className='flex items-center gap-2'>
+            {section.options.map((o) => (
+              <div key={o} className='flex items-center gap-2'>
                 <Checkbox
-                  checked={multiSelect[opt] || false}
+                  checked={multiSelect[o] || false}
                   onChange={(e) => {
                     const checked = e.target.checked
-                    const updated = { ...multiSelect, [opt]: checked }
-                    setMultiSelect(updated)
-                    saveResponse(courseId, moduleId, submoduleId, `option-${opt}`, String(checked))
+                    setMultiSelect((prev) => ({ ...prev, [o]: checked }))
+                    saveResponse(courseId, moduleId, submoduleId, `option-${o}`, String(checked))
                   }}
                 />
-                <Label>{opt}</Label>
+                <Label className='flex items-center'>{o}<Check show={multiSelect[o]} /></Label>
               </div>
             ))}
           </div>
-          <div className='space-y-2 pt-4'>
-            {section.prompts.map((q, i) => (
-              <div key={i}>
-                <Label className='text-sm'>{q}</Label>
-                <Textarea
-                  className='mt-1'
-                  value={responses[q] || ''}
-                  onChange={(e) => handleSave(q, e.target.value)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-
-    case 'single-reflection':
-      return (
-        <div className='space-y-4'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          <Label>{section.prompt}</Label>
-          <Textarea
-            className='mt-1'
-            value={responses['single'] || ''}
-            onChange={(e) => handleSave('single', e.target.value)}
-          />
-        </div>
-      )
-
-    case 'value-select-reflection':
-      return (
-        <div className='space-y-4'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          <p className='text-sm text-gray-600'>Select values that resonate with you.</p>
-          {section.categories.map((category, i) => (
-            <div key={i} className='space-y-2'>
-              <Label className='font-medium'>{category}</Label>
-              <Textarea
-                placeholder='List values from this category...'
-                value={responses[category] || ''}
-                onChange={(e) => handleSave(category, e.target.value)}
-              />
-            </div>
-          ))}
-          {section.prompts.map((prompt, i) => (
+          {section.prompts.map((p, i) => (
             <div key={i}>
-              <Label className='text-sm'>{prompt}</Label>
-              <Textarea
-                className='mt-1'
-                value={responses[prompt] || ''}
-                onChange={(e) => handleSave(prompt, e.target.value)}
-              />
+              <Label className='text-sm flex items-center'>{p}<Check show={!!responses[p]} /></Label>
+              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
             </div>
           ))}
         </div>
-      )
+      )}
 
-    case 'mission-builder':
-      return (
-        <div className='space-y-6'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          <p className='text-sm italic text-gray-600'>Starter: {section.starter}</p>
-          <div className='space-y-2'>
-            <p className='text-sm text-gray-500'>Examples:</p>
-            <ul className='list-disc list-inside text-sm text-gray-700'>
-              {section.examples.map((ex, i) => (
-                <li key={i}>{ex}</li>
-              ))}
-            </ul>
-          </div>
-          {section.prompts.map((prompt, i) => (
-            <div key={i}>
-              <Label className='text-sm'>{prompt}</Label>
-              <Textarea
-                className='mt-1'
-                value={responses[prompt] || ''}
-                onChange={(e) => handleSave(prompt, e.target.value)}
-              />
+      {section.type === 'single-reflection' && (
+        <div>
+          <Label className='flex items-center'>{section.prompt}<Check show={!!responses['single']} /></Label>
+          <Textarea value={responses['single'] || ''} onChange={(e) => handleSave('single', e.target.value)} className='mt-1' />
+        </div>
+      )}
+
+      {section.type === 'value-select-reflection' && (
+        <div className='space-y-4'>
+          {section.categories.map((c) => (
+            <div key={c}>
+              <Label className='flex items-center'>{c}<Check show={!!responses[c]} /></Label>
+              <Textarea value={responses[c] || ''} onChange={(e) => handleSave(c, e.target.value)} className='mt-1' />
+            </div>
+          ))}
+          {section.prompts.map((p) => (
+            <div key={p}>
+              <Label className='flex items-center'>{p}<Check show={!!responses[p]} /></Label>
+              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
             </div>
           ))}
         </div>
-      )
+      )}
 
-    case 'rating-reflection':
-      return (
-        <div className='space-y-6'>
-          <h3 className='text-xl font-semibold'>{section.title}</h3>
-          <p className='text-sm text-gray-600'>Rate each area (1–10)</p>
-          <div className='space-y-4'>
-            {section.areas.map((area, i) => (
-              <div key={i}>
-                <Label>{area}</Label>
-                <Slider
-                  defaultValue={[ratings[area] || 5]}
-                  min={1}
-                  max={10}
-                  step={1}
-                  onValueChange={([value]) => {
-                    setRatings((prev) => ({ ...prev, [area]: value }))
-                    saveResponse(courseId, moduleId, submoduleId, `rating-${area}`, String(value))
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-          <div className='pt-4'>
-            <Label>{section.prompt}</Label>
+      {section.type === 'mission-builder' && (
+        <div className='space-y-4'>
+          <p className='text-sm italic'>Starter: {section.starter}</p>
+          <ul className='list-disc text-sm pl-5 text-gray-600'>
+            {section.examples.map((e, i) => <li key={i}>{e}</li>)}
+          </ul>
+          {section.prompts.map((p) => (
+            <div key={p}>
+              <Label className='flex items-center'>{p}<Check show={!!responses[p]} /></Label>
+              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {section.type === 'rating-reflection' && (
+        <div className='space-y-4'>
+          {section.areas.map((a) => (
+            <div key={a}>
+              <Label className='flex items-center'>{a}<Check show={ratings[a] > 0} /></Label>
+              <Slider
+                defaultValue={[ratings[a] || 5]}
+                min={1}
+                max={10}
+                step={1}
+                onValueChange={([val]) => {
+                  setRatings((prev) => ({ ...prev, [a]: val }))
+                  saveResponse(courseId, moduleId, submoduleId, `rating-${a}`, String(val))
+                }}
+              />
+            </div>
+          ))}
+          <div>
+            <Label className='flex items-center'>{section.prompt}<Check show={!!responses['rating-prompt']} /></Label>
             <Textarea
-              className='mt-1'
               value={responses['rating-prompt'] || ''}
               onChange={(e) => handleSave('rating-prompt', e.target.value)}
+              className='mt-1'
             />
           </div>
         </div>
-      )
-
-    default:
-      return null
-  }
+      )}
+    </div>
+  )
 }
