@@ -102,7 +102,7 @@
       "id": "2",
       "title": "Foundations & Friction",
       "description": "Honest inventory, anchored awareness",
-      "active": "no",
+      "active": "yes",
       "submodules": [
         {
           "id": "2.1",
@@ -166,6 +166,79 @@
           "prompt": "Where in my life am I choosing comfort over alignment — and what would a brave next step look like?"
         }
       ]
+    },
+    {
+      "id": "3",
+      "title": "Money Flow & Life Design",
+      "description": "Stability, sustainability, and soul-aligned systems",
+      "submodules": [
+        {
+          "id": "3.1",
+          "title": "📝 Introduction",
+          "type": "text",
+          "body": "Money touches every part of my life — but it’s never just about numbers.\n\nThis module is about developing a real relationship with money: one that supports the lifestyle I want to live, honors the way I want to feel, and gives me clarity about what I need (and don’t need) right now.\n\nIt’s also about designing a life that doesn’t just look good, but actually feels sustainable. I want more than a budget — I want a foundation that makes my decisions easier and my future clearer."
+        },
+        {
+          "id": "3.2",
+          "title": "💵 Build My Financial Overview",
+          "type": "financial-overview",
+          "description": "This is not about shame. It’s about seeing clearly so I can make decisions from a place of power — not panic or avoidance.",
+          "fields": [
+            "Monthly take-home income",
+            "Fixed expenses",
+            "Flexible or lifestyle spending",
+            "Debt obligations",
+            "Passive or potential income",
+            "Emergency savings (if any)",
+            "Current net worth (estimate)"
+          ],
+          "note": "If this feels overwhelming, I can just write down what I know now. I can always refine later."
+        },
+        {
+          "id": "3.3",
+          "title": "🧠 Money Mindset Check-In",
+          "type": "reflection",
+          "prompts": [
+            "What did I learn about money growing up?",
+            "What beliefs do I hold about money that might be limiting me now?",
+            "What does “financial freedom” actually mean to me?",
+            "Do I feel guilt, fear, or shame about earning/spending/saving — and where does that come from?"
+          ]
+        },
+        {
+          "id": "3.4",
+          "title": "🔁 Identify Leaks & Priorities",
+          "type": "reflection",
+          "prompts": [
+            "Where does my money go that doesn’t feel aligned anymore?",
+            "What do I want to spend more freely on — because it supports my health, growth, or joy?",
+            "Where can I reduce or simplify, not out of fear, but out of alignment?"
+          ]
+        },
+        {
+          "id": "3.5",
+          "title": "🏗 Design My Life Systems",
+          "type": "reflection",
+          "prompts": [
+            "What systems or routines keep my life flowing? (financial, personal, household, etc.)",
+            "Which systems are broken, overly complicated, or missing?",
+            "What would a simple, sustainable system for managing my month look like?"
+          ]
+        },
+        {
+          "id": "3.6",
+          "title": "🔮 Envision Financial & Lifestyle Freedom",
+          "type": "visualization",
+          "prompt": "I imagine waking up one year from now, feeling totally supported financially — not wealthy necessarily, but secure, empowered, and in flow.\n\nHow much am I earning and spending?\n\nWhat’s different about how I move through the world?\n\nWhat’s one habit or system that’s made the biggest difference?"
+        },
+        {
+          "id": "3.7",
+          "title": "💭 Mindful Moment",
+          "type": "single-reflection",
+          "prompt": "What would feeling in control of my money feel like — and what is one small shift I can make this week to move in that direction?"
+        }
+      ]
     }
+    
   ]
 }
