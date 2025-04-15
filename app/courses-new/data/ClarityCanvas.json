@@ -108,7 +108,7 @@
           "id": "2.1",
           "title": "📝 Introduction",
           "type": "text",
-          "body": "Before I can build what I want, I need to understand where I actually am.\n\nThis module is about getting honest with myself — without shame, without sugarcoating. Just clarity. I’m taking a snapshot of the life I’m currently living so I can gently sort through what’s working, what’s not, and what needs attention next.\n\nThis isn’t about fixing everything at once. It’s about seeing clearly, naming the friction points, and starting to design from a place of self-awareness instead of self-avoidance.\n\nThis is where real change begins."
+          "body": "Before I can build what I want, I need to understand where I actually am.\n\nThis module is about getting honest with myself — without shame, without sugarcoating. Just clarity. I'm taking a snapshot of the life I'm currently living so I can gently sort through what's working, what's not, and what needs attention next.\n\nThis isn't about fixing everything at once. It's about seeing clearly, naming the friction points, and starting to design from a place of self-awareness instead of self-avoidance.\n\nThis is where real change begins."
         },
         {
           "id": "2.2",
@@ -134,18 +134,18 @@
           "title": "🔥 Identify My Friction Points",
           "type": "reflection",
           "prompts": [
-            "What am I tolerating that I know isn’t healthy for me?",
+            "What am I tolerating that I know isn't healthy for me?",
             "Where am I shrinking, hesitating, or holding back my voice?",
             "What are the recurring frustrations or patterns that I keep brushing aside?"
           ]
         },
         {
           "id": "2.4",
-          "title": "🌱 Fuel Check: What’s Supporting Me?",
+          "title": "🌱 Fuel Check: What's Supporting Me?",
           "type": "reflection",
           "prompts": [
             "What feels genuinely good right now?",
-            "Where do I feel most proud of how I’ve been showing up?",
+            "Where do I feel most proud of how I've been showing up?",
             "Who or what is energizing me — and how can I nurture that?"
           ]
         },
@@ -155,7 +155,7 @@
           "type": "reflection",
           "prompts": [
             "What choices do I need to make right now to move in a healthier direction?",
-            "What’s one friction point I can start resolving this month — with grace, not pressure?",
+            "What's one friction point I can start resolving this month — with grace, not pressure?",
             "If I were giving honest advice to a friend in my shoes, what would I say?"
           ]
         },
@@ -176,13 +176,13 @@
           "id": "3.1",
           "title": "📝 Introduction",
           "type": "text",
-          "body": "Money touches every part of my life — but it’s never just about numbers.\n\nThis module is about developing a real relationship with money: one that supports the lifestyle I want to live, honors the way I want to feel, and gives me clarity about what I need (and don’t need) right now.\n\nIt’s also about designing a life that doesn’t just look good, but actually feels sustainable. I want more than a budget — I want a foundation that makes my decisions easier and my future clearer."
+          "body": "Money touches every part of my life — but it's never just about numbers.\n\nThis module is about developing a real relationship with money: one that supports the lifestyle I want to live, honors the way I want to feel, and gives me clarity about what I need (and don't need) right now.\n\nIt's also about designing a life that doesn't just look good, but actually feels sustainable. I want more than a budget — I want a foundation that makes my decisions easier and my future clearer."
         },
         {
           "id": "3.2",
           "title": "💵 Build My Financial Overview",
           "type": "financial-overview",
-          "description": "This is not about shame. It’s about seeing clearly so I can make decisions from a place of power — not panic or avoidance.",
+          "description": "This is not about shame. It's about seeing clearly so I can make decisions from a place of power — not panic or avoidance.",
           "fields": [
             "Monthly take-home income",
             "Fixed expenses",
@@ -210,7 +210,7 @@
           "title": "🔁 Identify Leaks & Priorities",
           "type": "reflection",
           "prompts": [
-            "Where does my money go that doesn’t feel aligned anymore?",
+            "Where does my money go that doesn't feel aligned anymore?",
             "What do I want to spend more freely on — because it supports my health, growth, or joy?",
             "Where can I reduce or simplify, not out of fear, but out of alignment?"
           ]
@@ -229,7 +229,7 @@
           "id": "3.6",
           "title": "🔮 Envision Financial & Lifestyle Freedom",
           "type": "visualization",
-          "prompt": "I imagine waking up one year from now, feeling totally supported financially — not wealthy necessarily, but secure, empowered, and in flow.\n\nHow much am I earning and spending?\n\nWhat’s different about how I move through the world?\n\nWhat’s one habit or system that’s made the biggest difference?"
+          "prompt": "I imagine waking up one year from now, feeling totally supported financially — not wealthy necessarily, but secure, empowered, and in flow.\n\nHow much am I earning and spending?\n\nWhat's different about how I move through the world?\n\nWhat's one habit or system that's made the biggest difference?"
         },
         {
           "id": "3.7",
@@ -246,13 +246,13 @@
               "id": "4.1",
               "title": "📝 Introduction",
               "type": "text",
-              "body": "This is where I zoom out and let myself imagine a life that feels beautifully mine — not just in theory, but in practice.\n\nThis isn’t about wild fantasy or Pinterest-perfect plans. It’s about giving myself permission to want what I really want, while getting clear on what that could look like across the core areas of my life.\n\nI’m going to take a look at what I desire 18 months from now — and what it would take to start walking toward it today."
+              "body": "This is where I zoom out and let myself imagine a life that feels beautifully mine — not just in theory, but in practice.\n\nThis isn't about wild fantasy or Pinterest-perfect plans. It's about giving myself permission to want what I really want, while getting clear on what that could look like across the core areas of my life.\n\nI'm going to take a look at what I desire 18 months from now — and what it would take to start walking toward it today."
             },
             {
               "id": "4.2",
               "title": "🗺 Envision My Life 18 Months From Now",
               "type": "visualization",
-              "prompt": "It’s [insert month/year 18 months ahead]. I wake up, stretch, and breathe in a life that feels aligned and on purpose.\n\nWhere am I?\n\nWhat’s my environment like?\n\nWhat am I doing in the mornings?\n\nWho is around me?\n\nWhat does my work look and feel like?\n\nWhat does my energy feel like?\n\nWhat have I let go of that I no longer miss?"
+              "prompt": "It's [insert month/year 18 months ahead]. I wake up, stretch, and breathe in a life that feels aligned and on purpose.\n\nWhere am I?\n\nWhat's my environment like?\n\nWhat am I doing in the mornings?\n\nWho is around me?\n\nWhat does my work look and feel like?\n\nWhat does my energy feel like?\n\nWhat have I let go of that I no longer miss?"
             },
             {
               "id": "4.3",
@@ -276,7 +276,7 @@
             },
             {
               "id": "4.4",
-              "title": "🧱 What’s Standing in My Way?",
+              "title": "🧱 What's Standing in My Way?",
               "type": "reflection",
               "prompts": [
                 "What mindset, fear, or belief has kept me small here?",
@@ -291,14 +291,14 @@
               "prompts": [
                 "If I could only make meaningful progress in three areas, which ones would I choose?",
                 "What does success look like for me by the end of these 18 months?",
-                "What’s one thing I’m no longer available for in this next season?"
+                "What's one thing I'm no longer available for in this next season?"
               ]
             },
             {
               "id": "4.6",
               "title": "💭 Mindful Moment",
               "type": "single-reflection",
-              "prompt": "What’s a desire I’ve been afraid to name — and how would it feel to take one tiny step toward it this week?"
+              "prompt": "What's a desire I've been afraid to name — and how would it feel to take one tiny step toward it this week?"
             }
           ]
         },
@@ -311,7 +311,7 @@
               "id": "5.1",
               "title": "📝 Introduction",
               "type": "text",
-              "body": "Now that I’ve painted a clear picture of what I want my life to look and feel like, it’s time to bring it to the ground. This module is about structure — but not the rigid kind. It’s about momentum with meaning.\n\nInstead of trying to change everything at once, I’m going to organize my next 18 months into phases — gentle seasons of focus that move me forward without overwhelming me.\n\nThis is about progress over pressure. And it’s how I turn possibility into a path."
+              "body": "Now that I've painted a clear picture of what I want my life to look and feel like, it's time to bring it to the ground. This module is about structure — but not the rigid kind. It's about momentum with meaning.\n\nInstead of trying to change everything at once, I'm going to organize my next 18 months into phases — gentle seasons of focus that move me forward without overwhelming me.\n\nThis is about progress over pressure. And it's how I turn possibility into a path."
             },
             {
               "id": "5.2",
@@ -336,7 +336,7 @@
                 },
                 {
                   "label": "PHASE 3: Scale & Freedom (Months 7–12)",
-                  "focus": "Expand what’s working, reclaim time, refine lifestyle",
+                  "focus": "Expand what's working, reclaim time, refine lifestyle",
                   "prompts": [
                     "What needs to be simplified or automated?",
                     "Where can I work smarter, not harder?"
@@ -344,10 +344,10 @@
                 },
                 {
                   "label": "PHASE 4: Thrive & Expand (Months 13–18)",
-                  "focus": "Embody the vision, deepen impact, celebrate how far I’ve come",
+                  "focus": "Embody the vision, deepen impact, celebrate how far I've come",
                   "prompts": [
                     "What does living “on purpose” look like for me now?",
-                    "What’s the next level — not from pressure, but from alignment?"
+                    "What's the next level — not from pressure, but from alignment?"
                   ]
                 }
               ]
@@ -358,10 +358,10 @@
               "type": "phase-map-builder",
               "prompts": [
                 "What are my top 3 priorities or intentions?",
-                "What’s one thing I’ll consciously deprioritize or release?",
+                "What's one thing I'll consciously deprioritize or release?",
                 "How will I know this phase is complete (emotionally or practically)?"
               ],
-              "note": "This doesn’t have to be perfect. I can revisit it every 3 months and adjust as I go."
+              "note": "This doesn't have to be perfect. I can revisit it every 3 months and adjust as I go."
             },
             {
               "id": "5.4",
@@ -370,7 +370,7 @@
               "prompts": [
                 "What needs to happen just before my 18-month vision becomes reality?",
                 "What needs to happen before that?",
-                "What’s the most logical flow that supports momentum — not perfection?"
+                "What's the most logical flow that supports momentum — not perfection?"
               ]
             },
             {
