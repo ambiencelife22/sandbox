@@ -1359,9 +1359,9 @@ a.return_to_content_button {
 }
 
 @media(max-width:500px) {
-  .custom_full_width_placholder_container .custom_placeholder.territory {
-    /* height: 32px;x */
-  }
+  /* .custom_full_width_placholder_container .custom_placeholder.territory {
+    height: 32px;
+  } */
 
   .sub_al_card {
     height: 40vw;

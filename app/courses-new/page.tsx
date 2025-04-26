@@ -1,6 +1,7 @@
 /* courses-new/page.tsx */
-
 'use client'
+
+import '@/app/app.css'
 
 import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'

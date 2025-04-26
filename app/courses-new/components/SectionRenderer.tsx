@@ -3,63 +3,25 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import dynamic from 'next/dynamic'
 import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { Button } from '@/components/ui/button'
-import clsx from 'clsx'
 
 const API_URL_LINK = 'https://api.example.com/save-response'
+const WeeklyFlowPlanner = dynamic(() => import('@/app/courses-new/data/WeeklyFlowPlanner'), { ssr: false })
 
 export type Submodule =
-  | {
-      id: string
-      title: string
-      type: 'text'
-      body: string
-    }
-  | {
-      id: string
-      title: string
-      type: 'reflection' | 'visualization'
-      prompts: string[]
-    }
-  | {
-      id: string
-      title: string
-      type: 'multiselect-reflection'
-      options: string[]
-      prompts: string[]
-    }
-  | {
-      id: string
-      title: string
-      type: 'single-reflection'
-      prompt: string
-    }
-  | {
-      id: string
-      title: string
-      type: 'value-select-reflection'
-      categories: string[]
-      prompts: string[]
-    }
-  | {
-      id: string
-      title: string
-      type: 'mission-builder'
-      starter: string
-      examples: string[]
-      prompts: string[]
-    }
-  | {
-      id: string
-      title: string
-      type: 'rating-reflection'
-      areas: string[]
-      prompt: string
-    }
+  | { id: string; title: string; type: 'text'; body: string }
+  | { id: string; title: string; type: 'reflection' | 'visualization'; prompts: string[] }
+  | { id: string; title: string; type: 'multiselect-reflection'; options: string[]; prompts: string[] }
+  | { id: string; title: string; type: 'single-reflection'; prompt: string }
+  | { id: string; title: string; type: 'value-select-reflection'; categories: string[]; prompts: string[] }
+  | { id: string; title: string; type: 'mission-builder'; starter: string; examples: string[]; prompts: string[] }
+  | { id: string; title: string; type: 'rating-reflection'; areas: string[]; prompt: string }
+  | { id: string; title: string; type: 'weekly-flow-planner' }
 
 interface SectionRendererProps {
   section: Submodule
@@ -124,7 +86,6 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
     setRatings(newRatings)
   }, [section, courseId, moduleId, submoduleId])
 
-  // 🔄 Progress Tracking
   const { completed, total } = useMemo(() => {
     let completed = 0
     let total = 0
@@ -159,6 +120,9 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
         completed = section.areas.filter((a) => ratings[a] > 0).length
         if (check(responses['rating-prompt'])) completed++
         break
+      default:
+        total = 0
+        completed = 0
     }
 
     return { completed, total }
@@ -166,7 +130,6 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
 
   const percent = total > 0 ? Math.round((completed / total) * 100) : 0
 
-  // 🔘 UI helpers
   const Check = ({ show }: { show: boolean }) => show ? <span className='ml-2 text-green-600'>✔️</span> : null
 
   const ProgressBar = () => (
@@ -187,7 +150,6 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
     </div>
   )
 
-  // 🪄 Mark as complete logic
   const markAsComplete = () => {
     const updates: Record<string, string> = {}
     const multi: Record<string, boolean> = {}
@@ -233,11 +195,9 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
     Object.entries(rate).forEach(([k, v]) => saveResponse(courseId, moduleId, submoduleId, `rating-${k}`, String(v)))
   }
 
-  // 🎨 Unified layout
   return (
     <div className='space-y-6'>
       <ProgressBar />
-
       <h3 className='text-xl font-semibold'>{section.title}</h3>
 
       {section.type === 'text' && (
@@ -246,38 +206,36 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
         </div>
       )}
 
-      {['reflection', 'visualization'].includes(section.type) && 'prompts' in section && (
+      {section.type === 'reflection' || section.type === 'visualization' ? (
         <div className='space-y-4'>
-          {section.prompts.map((p, i) => (
-            <div key={i}>
+          {section.prompts.map((p) => (
+            <div key={p}>
               <Label className='text-sm flex items-center'>{p}<Check show={!!responses[p]} /></Label>
-              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
+              <Textarea className='mt-1' value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} />
             </div>
           ))}
         </div>
-      )}
+      ) : null}
 
       {section.type === 'multiselect-reflection' && (
         <div className='space-y-4'>
-          <div className='space-y-2'>
-            {section.options.map((o) => (
-              <div key={o} className='flex items-center gap-2'>
-                <Checkbox
-                  checked={multiSelect[o] || false}
-                  onChange={(e) => {
-                    const checked = e.target.checked
-                    setMultiSelect((prev) => ({ ...prev, [o]: checked }))
-                    saveResponse(courseId, moduleId, submoduleId, `option-${o}`, String(checked))
-                  }}
-                />
-                <Label className='flex items-center'>{o}<Check show={multiSelect[o]} /></Label>
-              </div>
-            ))}
-          </div>
-          {section.prompts.map((p, i) => (
-            <div key={i}>
+          {section.options.map((o) => (
+            <div key={o} className='flex items-center gap-2'>
+              <Checkbox
+                checked={multiSelect[o] || false}
+                onChange={(e) => {
+                  const checked = e.target.checked
+                  setMultiSelect((prev) => ({ ...prev, [o]: checked }))
+                  saveResponse(courseId, moduleId, submoduleId, `option-${o}`, String(checked))
+                }}
+              />
+              <Label className='flex items-center'>{o}<Check show={multiSelect[o]} /></Label>
+            </div>
+          ))}
+          {section.prompts.map((p) => (
+            <div key={p}>
               <Label className='text-sm flex items-center'>{p}<Check show={!!responses[p]} /></Label>
-              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
+              <Textarea className='mt-1' value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} />
             </div>
           ))}
         </div>
@@ -286,7 +244,7 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
       {section.type === 'single-reflection' && (
         <div>
           <Label className='flex items-center'>{section.prompt}<Check show={!!responses['single']} /></Label>
-          <Textarea value={responses['single'] || ''} onChange={(e) => handleSave('single', e.target.value)} className='mt-1' />
+          <Textarea className='mt-1' value={responses['single'] || ''} onChange={(e) => handleSave('single', e.target.value)} />
         </div>
       )}
 
@@ -295,13 +253,13 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
           {section.categories.map((c) => (
             <div key={c}>
               <Label className='flex items-center'>{c}<Check show={!!responses[c]} /></Label>
-              <Textarea value={responses[c] || ''} onChange={(e) => handleSave(c, e.target.value)} className='mt-1' />
+              <Textarea className='mt-1' value={responses[c] || ''} onChange={(e) => handleSave(c, e.target.value)} />
             </div>
           ))}
           {section.prompts.map((p) => (
             <div key={p}>
               <Label className='flex items-center'>{p}<Check show={!!responses[p]} /></Label>
-              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
+              <Textarea className='mt-1' value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} />
             </div>
           ))}
         </div>
@@ -310,13 +268,13 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
       {section.type === 'mission-builder' && (
         <div className='space-y-4'>
           <p className='text-sm italic'>Starter: {section.starter}</p>
-          <ul className='list-disc text-sm pl-5 text-gray-600'>
+          <ul className='list-disc pl-5 text-gray-600 text-sm'>
             {section.examples.map((e, i) => <li key={i}>{e}</li>)}
           </ul>
           {section.prompts.map((p) => (
             <div key={p}>
               <Label className='flex items-center'>{p}<Check show={!!responses[p]} /></Label>
-              <Textarea value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} className='mt-1' />
+              <Textarea className='mt-1' value={responses[p] || ''} onChange={(e) => handleSave(p, e.target.value)} />
             </div>
           ))}
         </div>
@@ -342,11 +300,17 @@ export default function SectionRenderer({ section, courseId, moduleId, submodule
           <div>
             <Label className='flex items-center'>{section.prompt}<Check show={!!responses['rating-prompt']} /></Label>
             <Textarea
+              className='mt-1'
               value={responses['rating-prompt'] || ''}
               onChange={(e) => handleSave('rating-prompt', e.target.value)}
-              className='mt-1'
             />
           </div>
+        </div>
+      )}
+
+      {section.type === 'weekly-flow-planner' && (
+        <div>
+          <WeeklyFlowPlanner />
         </div>
       )}
     </div>
