@@ -44,7 +44,8 @@ export default function CoursesNewIndex() {
               }`}
             >
               <CardContent className='p-6 space-y-3'>
-                <h2 className='text-xl font-semibold flex items-center gap-2'>
+                <h2 className='
+                text-xl font-semibold mb-2 flex items-center gap-2'>
                   <span>{course.emoji}</span> {course.title}
                 </h2>
                 <p className='text-gray-600 text-sm'>{course.subtitle}</p>
