@@ -1,0 +1,488 @@
+{
+    "scenarios": [
+      {
+        "id": 1,
+        "promptText": "You didn't get the job you really wanted.",
+        "responses": [
+          {
+            "option": "I guess I'm just not good enough.",
+            "feedback": "This reinforces a limiting belief and closes the door to growth. It's disempowering and likely untrue."
+          },
+          {
+            "option": "The hiring process is random sometimes—who knows what they were looking for.",
+            "feedback": "This is a neutral take that avoids spiraling but also avoids growth. Accepting, but passive."
+          },
+          {
+            "option": "This wasn't the right fit, but something better is lining up. I've gained clarity through the process.",
+            "feedback": "Empowering interpretation. You're taking agency and trusting in alignment. Strong mindset."
+          },
+          {
+            "option": "They probably just wanted someone who would play the corporate game.",
+            "feedback": "This seems confident, but it's blame masked as empowerment. It may keep you feeling superior but stuck."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "promptText": "You texted someone something meaningful and they ghosted.",
+        "responses": [
+          {
+            "option": "I shouldn't have been so vulnerable. I always mess this stuff up.",
+            "feedback": "This is a disempowering conclusion rooted in shame. It's not necessarily true and reinforces unworthiness."
+          },
+          {
+            "option": "Maybe they just didn't know how to respond. Ghosting says more about them than me.",
+            "feedback": "A neutral interpretation that avoids self-blame. It creates emotional distance from the event."
+          },
+          {
+            "option": "That message came from a real place, and I stand by it. I want someone who values that kind of honesty.",
+            "feedback": "Strong and empowering. You're affirming your values and openness, not letting the response define you."
+          },
+          {
+            "option": "Some people ghost when you're actually real with them. They prob weren't worth my time anyway.",
+            "feedback": "Feels strong but slightly defensive. It may be a self-protective story that avoids feeling the hurt."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "promptText": "You had a disagreement with a close friend and haven't talked in days.",
+        "responses": [
+          {
+            "option": "I must have done something wrong. I always mess up relationships.",
+            "feedback": "This reflects self-blame and could reinforce feelings of inadequacy. It's important to acknowledge both sides in disagreements."
+          },
+          {
+            "option": "Maybe they just need space. I don't need to take it personally.",
+            "feedback": "A healthy approach that offers perspective, allowing room for understanding without internalizing the issue."
+          },
+          {
+            "option": "It's frustrating, but I know we'll work it out eventually. Every relationship has its ups and downs.",
+            "feedback": "This is an empowering and realistic approach, understanding that conflict is natural and temporary."
+          },
+          {
+            "option": "If they can't communicate properly, maybe I don't need them in my life.",
+            "feedback": "This may come from a place of defensiveness, closing off emotional connection instead of fostering open dialogue."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "promptText": "You received a critical comment online about something you created.",
+        "responses": [
+          {
+            "option": "This person is just a hater. They don't know what they're talking about.",
+            "feedback": "This response is defensive and dismissive, potentially blocking growth. It's important to consider valid feedback, even from critics."
+          },
+          {
+            "option": "Not everyone will like what I do. It's just one opinion out of many.",
+            "feedback": "A balanced perspective, recognizing that different opinions are natural and don't define your worth or work."
+          },
+          {
+            "option": "I'll use this criticism to improve and make my work even better next time.",
+            "feedback": "A positive and constructive mindset. This approach shows resilience and a commitment to learning and growing from feedback."
+          },
+          {
+            "option": "They clearly don't appreciate the effort that went into it. I should stop sharing my work online.",
+            "feedback": "This response might stem from discouragement. It's important to keep sharing and growing, even in the face of criticism."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "promptText": "You made a mistake at work that impacted the project you were working on.",
+        "responses": [
+          {
+            "option": "I should have known better. This is going to ruin everything.",
+            "feedback": "This thought focuses on shame and self-criticism. Mistakes happen, and they don't define your overall performance."
+          },
+          {
+            "option": "It's an unfortunate mistake, but I'll fix it and learn from it. Everyone makes mistakes.",
+            "feedback": "A realistic and empowering approach. Acknowledging the mistake and focusing on the solution shows resilience and growth."
+          },
+          {
+            "option": "I feel like I'm always messing things up. Maybe I'm not cut out for this job.",
+            "feedback": "This thought leans toward self-doubt and should be re-framed. Mistakes are part of any job, and they don't define your abilities."
+          },
+          {
+            "option": "I can use this as a chance to show how well I can recover and learn from this situation.",
+            "feedback": "This is an empowering mindset that shows growth, adaptability, and a focus on improvement, rather than getting stuck in the mistake."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "promptText": "You were invited to an event but didn't feel like you fit in with the crowd.",
+        "responses": [
+          {
+            "option": "I'm just not social enough. I always feel awkward in these situations.",
+            "feedback": "This reinforces a limiting belief. Feeling awkward is normal, and it doesn't define your social abilities or worth."
+          },
+          {
+            "option": "It's okay. Not every event is for everyone. I'll just enjoy myself in my own way.",
+            "feedback": "A healthy and empowering approach that acknowledges personal preferences and removes pressure to conform."
+          },
+          {
+            "option": "I didn't vibe with anyone, but I can use this experience to work on my social skills next time.",
+            "feedback": "A constructive take that focuses on growth and improving social experiences without judgment or shame."
+          },
+          {
+            "option": "I just don't belong in this circle. Maybe I shouldn't go to events like this anymore.",
+            "feedback": "This response is quite dismissive and final. It may be worth exploring the discomfort rather than isolating yourself from future events."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "promptText": "You received feedback from your boss that your performance needs improvement.",
+        "responses": [
+          {
+            "option": "I'm never good enough for them. I can't seem to do anything right.",
+            "feedback": "This reflects a negative self-judgment that can lead to a fixed mindset. It's important to view feedback as an opportunity to improve, not as a personal failure."
+          },
+          {
+            "option": "I'll take this feedback and see what I can work on. Everyone has areas to improve.",
+            "feedback": "A growth mindset response. Acknowledging that feedback is part of development and not an attack on your abilities."
+          },
+          {
+            "option": "I need to put in more effort and prove myself next time. I won't let this define me.",
+            "feedback": "This is an empowering and motivating approach, focusing on self-improvement and resilience."
+          },
+          {
+            "option": "Maybe this job isn't for me. If I can't get it right, what am I even doing here?",
+            "feedback": "This response leans toward defeatism and may be a reaction to frustration. It's crucial to reframe setbacks as growth opportunities rather than reasons to give up."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "promptText": "You posted something on social media that you were really proud of, but it didn't get the feedback you were hoping for.",
+        "responses": [
+          {
+            "option": "Maybe my post wasn't good enough. No one seems to care.",
+            "feedback": "This response focuses on self-doubt and can lead to feelings of unworthiness. Remember, engagement doesn't always reflect the value of your work."
+          },
+          {
+            "option": "Social media is unpredictable. Sometimes things just don't land the way you expect them to.",
+            "feedback": "A healthy and realistic perspective. Recognizing that external factors often play a role can prevent unnecessary self-judgment."
+          },
+          {
+            "option": "I know the content I shared is meaningful, and I'll keep posting things that reflect who I am.",
+            "feedback": "An empowering mindset that focuses on staying true to your values and continuing to create meaningful content, regardless of external validation."
+          },
+          {
+            "option": "Maybe people just don't get it. I'm done trying to impress others online.",
+            "feedback": "This may be a defense mechanism, detaching from the disappointment. It's important to find a balance between authenticity and staying open to feedback."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "promptText": "You missed an important opportunity that you've been preparing for.",
+        "responses": [
+          {
+            "option": "I just can't catch a break. Maybe I'm not meant for this.",
+            "feedback": "This response leans into defeatism. It's important to remember that setbacks are a natural part of growth, not signs of failure."
+          },
+          {
+            "option": "I missed it this time, but there will be more chances. I'll learn from this one.",
+            "feedback": "This is a growth-oriented perspective. It's an empowering response that acknowledges setbacks but focuses on future opportunities."
+          },
+          {
+            "option": "I should've been more prepared. It's all my fault.",
+            "feedback": "Self-blame can limit growth. Instead of blaming yourself, focus on what can be improved for the future."
+          },
+          {
+            "option": "I think this opportunity just wasn't meant for me, and that's okay. Something better might come along.",
+            "feedback": "This response is grounded in acceptance and trust. It's about recognizing that sometimes, things don't align for a reason."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "promptText": "You and a close friend had a misunderstanding, and now there's distance between you two.",
+        "responses": [
+          {
+            "option": "They should've understood me better. I'm not sure I want to try anymore.",
+            "feedback": "This response may cause further distance. It's important to communicate openly and give the other person the chance to explain their perspective."
+          },
+          {
+            "option": "Misunderstandings happen, but I'm willing to talk it out and clear the air.",
+            "feedback": "This approach is solution-focused and healthy. It emphasizes the importance of communication in maintaining relationships."
+          },
+          {
+            "option": "Maybe this friendship isn't worth the effort if this keeps happening.",
+            "feedback": "This response can indicate frustration, but it's important to reflect on the overall value of the relationship before making hasty decisions."
+          },
+          {
+            "option": "I know we both have our flaws, and it might take time to rebuild trust. I'm open to that process.",
+            "feedback": "This response is mature and grounded in emotional intelligence. Acknowledging both sides and being open to growth is key to healing."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "promptText": "You've been putting off a big task that you've been dreading, and now the deadline is fast approaching.",
+        "responses": [
+          {
+            "option": "I always procrastinate. I'm never going to get it done on time.",
+            "feedback": "This response is self-defeating and focuses on past behaviors. Instead of labeling yourself, focus on taking small, actionable steps toward completion."
+          },
+          {
+            "option": "I've left this too late, but I'll do what I can to make it work. It's not ideal, but I can still try.",
+            "feedback": "This is a realistic, action-oriented response. Acknowledging the situation while still focusing on effort is empowering."
+          },
+          {
+            "option": "I'm just going to accept that I won't be able to do my best, but at least I'll have something to show.",
+            "feedback": "While this response shows some acceptance, it may indicate resignation. Aim to give yourself permission to do your best, even under time constraints."
+          },
+          {
+            "option": "I'll take a deep breath, break this down into smaller tasks, and get started now. It's all about progress, not perfection.",
+            "feedback": "This response is highly proactive and focused on positive momentum. Breaking down the task helps make it feel less overwhelming and more manageable."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "promptText": "You set a big goal and didn't reach it.",
+        "responses": [
+          {
+            "option": "I guess I wasn't meant for this goal.",
+            "feedback": "This response shuts down growth and aligns with a fixed mindset. It's important to see failure as part of the learning process."
+          },
+          {
+            "option": "Maybe I wasn't fully committed or focused enough. I'll reassess and try again.",
+            "feedback": "This response is balanced and shows ownership. You're accepting responsibility while still leaving room for improvement."
+          },
+          {
+            "option": "I learned a lot through the process, and the goal might not be aligned with where I'm headed anyway.",
+            "feedback": "A growth-oriented response. You're framing the failure as part of the journey and possibly reevaluating your goal."
+          },
+          {
+            "option": "This goal was unrealistic from the start. Time to shift priorities.",
+            "feedback": "This is a realistic take. Sometimes, reassessing goals based on new information is the best way forward."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "promptText": "You tried to give a speech or presentation, but you felt like it didn't go well.",
+        "responses": [
+          {
+            "option": "I must have been terrible. Everyone probably thinks I'm not good at this.",
+            "feedback": "This is a self-critical response. It's important to view any public speaking experience as a learning opportunity rather than a failure."
+          },
+          {
+            "option": "It wasn't perfect, but I got through it. I'll focus on what I can improve next time.",
+            "feedback": "This is a healthy, growth-focused perspective. You acknowledge the difficulty but embrace learning from it."
+          },
+          {
+            "option": "I was nervous, but I'll try again next time and work on my presentation skills.",
+            "feedback": "This shows self-compassion and a willingness to improve. You're treating the experience as part of a larger process."
+          },
+          {
+            "option": "I felt uncomfortable, but everyone has moments like this. It's not the end of the world.",
+            "feedback": "This response shows resilience. You acknowledge the challenge but maintain a healthy perspective on setbacks."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "promptText": "You received a compliment on something you don't feel you deserve praise for.",
+        "responses": [
+          {
+            "option": "I don't deserve this compliment. They're just being nice.",
+            "feedback": "This response dismisses the compliment and minimizes your accomplishments. It's important to allow yourself to accept positive feedback."
+          },
+          {
+            "option": "I appreciate the compliment, even if it feels undeserved. Maybe I'm being too hard on myself.",
+            "feedback": "This response shows openness to receiving positive feedback, and it also acknowledges self-compassion."
+          },
+          {
+            "option": "I've put in the effort, so maybe I do deserve it after all.",
+            "feedback": "This response reflects growth and acknowledgment of your efforts. It shows you're learning to accept recognition."
+          },
+          {
+            "option": "I'll take the compliment graciously, even if it doesn't feel totally deserved.",
+            "feedback": "This is a healthy response, showing you're working on embracing positive feedback without overthinking it."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "promptText": "You were excited about a new project but realized it's more challenging than you expected.",
+        "responses": [
+          {
+            "option": "Maybe I'm not cut out for this. I should have stuck to what I know.",
+            "feedback": "This response is defeatist. It's important to see challenges as part of growth rather than reasons to give up."
+          },
+          {
+            "option": "It's difficult, but I can learn and adapt. I'll take it one step at a time.",
+            "feedback": "This is a positive mindset. You're embracing the challenge and choosing to move forward with a learning approach."
+          },
+          {
+            "option": "I'm feeling overwhelmed, but I know I can ask for help and get through it.",
+            "feedback": "This response reflects self-awareness and a willingness to seek support when needed. It shows maturity in managing challenges."
+          },
+          {
+            "option": "It's harder than I thought, but I'm committed to pushing through and making it work.",
+            "feedback": "This response shows resilience and determination. You're embracing the challenge and committing to the process."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "promptText": "You made plans with someone, but they canceled at the last minute.",
+        "responses": [
+          {
+            "option": "I guess they didn't care enough to follow through. I feel let down.",
+            "feedback": "This is an emotional, negative interpretation. It's important to separate their actions from your self-worth."
+          },
+          {
+            "option": "It's disappointing, but things happen. I'll be open to rescheduling when they're ready.",
+            "feedback": "This response shows understanding and patience. You're not taking it personally and are keeping the door open for future plans."
+          },
+          {
+            "option": "It's frustrating, but I'll use the extra time for something productive or relaxing.",
+            "feedback": "This is a healthy way to reframe the situation. You're making the most of the unexpected change in plans."
+          },
+          {
+            "option": "I'm disappointed, but I know they have their reasons. I'll give them space.",
+            "feedback": "This response shows maturity and empathy. You're allowing for the possibility that their cancellation was out of their control."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "promptText": "You took a risk by sharing an idea with others, but it didn't get the response you hoped for.",
+        "responses": [
+          {
+            "option": "I should have kept it to myself. I guess my ideas are not good enough.",
+            "feedback": "This response is overly self-critical. Every idea is an opportunity to learn and improve, regardless of the immediate response."
+          },
+          {
+            "option": "It didn't land as I hoped, but I'll refine it and try again.",
+            "feedback": "This is a healthy mindset. You're viewing the situation as a learning experience and embracing the possibility of future success."
+          },
+          {
+            "option": "Not everyone will get it, but I believe in the value of my idea and will keep pushing forward.",
+            "feedback": "This response reflects confidence and persistence. You're recognizing that not everyone will always understand, but that doesn't diminish the value of your ideas."
+          },
+          {
+            "option": "Maybe I'm not ready for this, but I'll take the feedback and work on improving.",
+            "feedback": "This response shows openness to constructive criticism. You're committed to growth and willing to refine your approach."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "promptText": "You committed to a new habit or routine but found it harder to maintain than you thought.",
+        "responses": [
+          {
+            "option": "I guess I just don't have the discipline for this. It's too difficult.",
+            "feedback": "This is a defeatist response. Maintaining new habits takes time and patience. It's important to be kind to yourself in the process."
+          },
+          {
+            "option": "It's harder than I expected, but I'll make adjustments and keep trying.",
+            "feedback": "This shows resilience. You're acknowledging the challenge while staying focused on your goal and willing to adjust along the way."
+          },
+          {
+            "option": "Maybe I need a different approach or some extra support to make this work.",
+            "feedback": "This response reflects flexibility and a proactive approach to problem-solving. You're not giving up; you're adjusting your strategy."
+          },
+          {
+            "option": "It's been tough, but I'll keep pushing through and trust the process.",
+            "feedback": "This is a determined, growth-oriented mindset. You're sticking with it despite the difficulty, which shows perseverance."
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "promptText": "You had an argument with a family member, and now there's tension between you two.",
+        "responses": [
+          {
+            "option": "I feel like things will never be the same again. I've probably ruined our relationship.",
+            "feedback": "This response is extreme and pessimistic. Conflict doesn't necessarily mean the end of a relationship, but rather an opportunity for growth and understanding."
+          },
+          {
+            "option": "I'm upset, but I'll give it time and space to cool off before trying to talk things through.",
+            "feedback": "This is a balanced response. You're acknowledging your emotions while also recognizing the need for reflection and calm before attempting resolution."
+          },
+          {
+            "option": "We'll get through this. I'll reach out and try to clear the air when the time is right.",
+            "feedback": "This shows maturity and a willingness to repair the relationship. You're taking responsibility and planning for a positive resolution."
+          },
+          {
+            "option": "I don't know how to fix things, but I know I can work on how I approach the situation.",
+            "feedback": "This is a self-aware response. You're focusing on your own approach and emotional regulation, which is a positive step toward resolution."
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "promptText": "You tried something new, but it didn't turn out as well as you hoped.",
+        "responses": [
+          {
+            "option": "I knew I wouldn't be good at it. I should have stuck with what I know.",
+            "feedback": "This is a self-limiting belief. Trying new things is a learning experience, and success often comes with repeated attempts and adjustments."
+          },
+          {
+            "option": "It didn't work this time, but I learned from it and will try again with a new approach.",
+            "feedback": "This is a growth mindset. You're seeing the experience as an opportunity to learn and improve, rather than viewing it as a failure."
+          },
+          {
+            "option": "I didn't get the results I wanted, but it was still a valuable experience, and I'm proud I tried.",
+            "feedback": "This response highlights self-compassion. You're focusing on the courage to try rather than just the outcome."
+          },
+          {
+            "option": "I made mistakes, but I'll keep practicing and refining. Progress takes time.",
+            "feedback": "This is a healthy, persistent mindset. You're embracing the process of improvement and understanding that mastery requires practice."
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "promptText": "You expressed your feelings to someone you're interested in, but they didn't feel the same way.",
+        "responses": [
+          {
+            "option": "I should've known better. I was probably just imagining things.",
+            "feedback": "This response focuses on self-blame and regret. It's natural to feel disappointment, but it's important to remember that rejection is a part of life and doesn't reflect your worth."
+          },
+          {
+            "option": "It stings, but I'm proud of myself for being honest about my feelings. I'll be okay.",
+            "feedback": "This is a healthy and empowering take. Acknowledging the courage it took to express yourself shows strength and emotional maturity."
+          },
+          {
+            "option": "Maybe they were just not the right person for me. I'll keep looking for someone who values me.",
+            "feedback": "This response demonstrates resilience and a healthy mindset. It acknowledges that the right person is out there, and it's okay for things not to work out with this one."
+          },
+          {
+            "option": "That was embarrassing. I don't think I'll ever put myself out there like that again.",
+            "feedback": "This response reflects disappointment and fear of vulnerability. While it's normal to feel hurt, it's important to remind yourself that rejection doesn't define your ability to love or be loved."
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "promptText": "You've been working hard on a personal project, but it's taking longer to complete than you anticipated.",
+        "responses": [
+          {
+            "option": "I'm frustrated. It's taking way longer than I thought. Maybe it's not worth it.",
+            "feedback": "This response reflects frustration and potential discouragement. It's important to be patient with yourself and trust that progress takes time."
+          },
+          {
+            "option": "I underestimated the time it would take, but I'll keep pushing through and make steady progress.",
+            "feedback": "This is a resilient and proactive mindset. You're acknowledging the challenge while continuing to move forward at a manageable pace."
+          },
+          {
+            "option": "It's taking longer than expected, but I'm learning a lot along the way, and that's valuable.",
+            "feedback": "This response shows perspective and focus on growth. Even if it takes longer, the process is teaching you important lessons."
+          },
+          {
+            "option": "I'm not where I thought I'd be, but I'm proud of the progress I've made so far.",
+            "feedback": "This response emphasizes self-compassion and pride in the effort put forth, regardless of the timeline."
+          }
+        ]
+      }                                       
+    ]
+  }  

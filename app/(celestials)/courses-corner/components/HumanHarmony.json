@@ -1,0 +1,315 @@
+{
+  "Course": {
+    "id": 1,
+    "name": "Human Harmony",
+    "urlParam": "/hh",
+    "urlCourse": "xC/hh",
+    "shortDescrip": "Ignite The Power Of The Human Needs, Unleash Your Potential",
+    "medDescrip1": "Set your sails on a life-altering journey with 'Human Harmony: Ignite The Power Of The Human Needs, Unleash Your Potential', our ignaugural course!\n\nThis revolutionary course captures the essence of a concept coined by legendary life coach, author, and self-help expert, Tony Robbins... and, disperses a unique story-telling adventure that could only come from the minds behind ambience.LIFE.",
+    "medDescrip2": "Uncover the keys to unlocking your full potential; set the stage to expand and enhance growth, resilience, and lasting fulfillment; ignite your inner flame; and, transform your life with a personal revolution.",
+    "medDescrip3": "This powerful tool for metamorphosis has been meticulously crafted to propel you beyond the ordinary... and, into the extraordinary realms of your true potential.",
+    "medDescrip4": "The possibilities you take away are limitless, and your new future present awaits. Self-discovery, self-empowerment... they are only the beginning.",
+    "about": {
+      "about1": "In the eye-opening first segment of this transformative journey, we delve into the intricate mysteries that guide our thoughts, shape our emotions, and propel us into action.\n\nWe unearth human behavior through a powerful lens: The Human Needs Concept.\n\nBrace yourself: this isn't your average lifestyle course — it's an adventure of self-discovery.",
+      "about2": "In the jam-packed middle section, each human need takes center stage, radiating like a star as we map, explore, and illuminate the key signposts to personal evolution... and, revoution.\n\nTake a deep breath as we plunge into the heart of what drives us.",
+      "about3": "The grand finale awaits... we bring it all together into a meticulously crafted blueprint for your own personal revolution.\n\nLearn to understand, orchestrate, and incorporate your unique formula for human needs mastery.\n\nThe odyssey of self-discovery is about to take a turning point towards your extraordinary future... one where the possibilities are as limitless as your newfound potential.\n\nGet ready for a journey that doesn't just teach you concepts, but lights a constellation of insights to guide you toward your own transformative path."
+    },
+    "sections": [
+      {
+        "id": 1,
+        "section": "Introduction",
+        "sectionUrl": "intro",
+        "sectionLaunch": "Launched",
+        "about": {
+          "about1Subheadline": "",
+          "about1": "Welcome, fellow explorer, to our in-depth course, Human Harmony: Ignite The Power Of The Human Needs, Unleash Your Potential!\n\nWe're so happy to have you as a part of our community and thrilled to see you participate in this course!",
+          "about2Subheadline": "",
+          "about2": "We're about to embark on a journey of the mind, heart, and soul — in order to discover what it truly means for us to have, do, and be what we want in life.\n\nWe'll explore the thoughts, feelings, decisions, and actions that we make... and, what drives them at the core of who we are — all through the unique lens of The Human Needs Concept.",
+          "about3Subheadline": "",
+          "about3": "Get ready as we'll peel back the curtains to shed light on the textures of human behavior and dig deep into the realm of knowledge and understanding about who we are at our core.\n\nFeel free to return to this course portal page at any point during the course."
+        },
+        "topics": [
+          {
+            "id": 1,
+            "topicName": "The Human Needs Concept",
+            "topicUrl": "hnc",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "Throughout life, we're able to set an intention: focus on breaking complex concepts and ideas into simple, easy-to-digest, bite-sized morsels of mental nutrition.\n\nThe Human Needs Concept — no exception to that — is all about looking at why we humans do the things we do...\n\n(( You know those things we do: the interesting, the mundane; the exciting, the boring; the kind, the unkind; the expected, the unexpected; and, sometimes the wildly unpredictable ))"
+              },
+              {
+                "id": "2",
+                "type": "par",
+                "content": "... then, categorizing all of those reasons for doing what we do into six basic, easy-to-understand factors.\n\nAnd, finally, we can learn how to apply these factors in order to live a happier, healthier, more fulfilling existence for ourselves and our loved ones.\n\nThe concept itself is rooted in what legendary Life Coach, speaker, and author, Tony Robbins, conceptualized, coined, and popularized: The 6 Human Needs."
+              },
+              {
+                "id": "3",
+                "type": "par",
+                "content": "<em>So, why is it that some people act in a way that others may judge or label to be unacceptable, inappropriate, immature, or childish when things don't go their way?</em>\n\n<em>Why do some people thrive in solitude, while others seek to constantly be surrounded by others?</em>\n\n<em>Why is it that some of us affix ourselves to daily routines and stay close to home, while others of us galavant whimsically around the world?</em>"
+              },
+              {
+                "id": "4",
+                "type": "par",
+                "content": "We'll answer these questions (and, many more) together as we set our sights on unpacking and unraveling The Human Needs Concept.\n\nThe power in this is that it's actually quite simple. In fact, nearly all human behavior can be explained by these six factors.\n\nSo, grab your popcorn — or fruitbowl, or ice cream, or snack of choice — strap your seatbelt on, and get ready for a wild ride into the human experience!"
+              }
+            ],
+            "topicQuestion": "",
+            "topicQuestionPrompt": "",
+            "link": "",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "section": "Understand The Unseen",
+        "sectionUrl": "utu",
+        "sectionLaunch": "Launched",
+        "about": {
+          "about1Subheadline": "Cracking The Code: Exploring The Essence Of Human Needs",
+          "about1": "Our journey begins by stepping through the exploration gateway of the Human Needs Concept.\n\nMoving beyond a theoretical overview, the focus is on nuturing a geniune and practical understanding, which we can later apply to our decisions, words, thoughts, and actions.",
+          "about2Subheadline": "Deciphering Desires: Delving into the Depths Of These Desires",
+          "about2": "Our exploration intensifies as we dive deep into the intricacies of human desires.\n\nWe broadly explore why these Human Needs as a whole play a crucial role in our existence while touching upon each one individually.",
+          "about3Subheadline": "Intrinsic Influences: Unraveling the Inner Forces That Shape Who We Are",
+          "about3": "In the final topic of this first section, we explore how these needs relate to our thoughts, decisions, and even our perception of the world around us.\n\nBy examining the interconnetedness of these needs, we look to gain a greater understanding of their importance.\n\nThrough the looking glass of story-telling, real-world examples, and introspective exercises, we identify and examine the internal factors that play a pivotal role in shaping our identity and influencing our actions."
+        },
+        "topics": [
+          {
+            "id": 1,
+            "topicName": "Cracking The Code",
+            "topicUrl": "CTC",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "Let's start this off with a bold statement:\n\n<em>At the heart of nearly every action, reaction, decision, thought, or emotion lies only a single, definable reason for its existence: one of six fundamental needs either has been or must be satisfied.</em>\n\nBoom! 🤯"
+              },
+              {
+                "id": "2",
+                "type": "par",
+                "content": "Sure... at the start, there may seem to be millions of reasons for an action, decision, thought, or feeling.\n\nAnd, it's absolutely true that there could be ...\n\nBut, underneath all of these reasons lies a subset of reasons for these reasons that are much smaller in quantity."
+              },
+              {
+                "id": "3",
+                "type": "par",
+                "content": "And, those subset reasons for reasons can be grouped into an even smaller subset of reasons for reasons for reasons... 🤪\n\n... and, so on, and so forth."
+              },
+              {
+                "id": "4",
+                "type": "par",
+                "content": "Think of it like an upside-down pyramid where the many reasons are funnelled down into smaller and smaller collections of reasons until finally, at the core of it all, they hit the point..."
+              },
+              {
+                "id": "5",
+                "type": "par",
+                "content": "And, it's at this point that we will find one (or, more) of 6 factors.\n\n This is The Human Needs Concept."
+              }
+            ],
+            "topicQuestion": "How would it enhance my life if I could simplify every decision to be based on one of only 6 factors?",
+            "topicQuestionPrompt": "Think of a recent decision I've made and how many reasons I considered in the process...",
+            "link": "",
+            "linkText": ""
+          },
+          {
+            "id": 2,
+            "topicName": "Deciphering Desires",
+            "topicUrl": "DD",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "So, what are these six factors that are supposedly at the core of basically everything in human existence?\n\n<em>Certainty, Variety, Relevance, Connection, Growing, and Contribution</em>\n\nJust in case you have no prior experience with the concept, let's take a quick look at each of these.\n\n(And, if you do, here's a little refresher)"
+              },
+              {
+                "id": "2",
+                "type": "par",
+                "content": "<em>Certainty</em>\n\nAka security, aka safety, aka comfort, aka consistency, aka routine, aka predictability\n\nAt the core of our being lies a primal need for certainty — the stability, safety, and comforts we can sometimes take for granted."
+              },
+              {
+                "id": "3",
+                "type": "par",
+                "content": "<em>Certainty (cont.)</em>\n\nWhether it's consistent income, a steady relationship, the dependable support of family and friends, an exercise routine, or as basic and primal as the assurance of survival, we all seek certainty in our lives in one form or another."
+              },
+              {
+                "id": "4",
+                "type": "par",
+                "content": "<em>Variety</em>\n\nAka surprises, aka possibility, aka the unknown, aka dreams & aspirations, aka the spice of life, aka change, aka diversity, aka different foods, aka choice.\n\nAs much as we need predictability and stability, we also crave change and unpredictability."
+              },
+              {
+                "id": "5",
+                "type": "par",
+                "content": "<em>Variety (cont.)</em>\n\nWe're creative, we seek adventure, we eat different foods, we watch different shows.\n\nThe need for diversity in our life can be just as strong as the need for consistency."
+              },
+              {
+                "id": "6",
+                "type": "par",
+                "content": "<em>Relevance</em>\n\nAka the self, aka uniqueness, aka being the most important person in our lover's, friend's, or family member's life, aka likes / comments / follows, aka achievement, aka praise.\n\nAnd, ohhh boy do we need it!\n<em>(gender neutral of course)</em>"
+              },
+              {
+                "id": "7",
+                "type": "par",
+                "content": "<em>Relevance (cont.)</em>\n\nIt's important for each of us that our life means something — no matter what form it takes.\n\nAnd, whether or not we outwardly seek praise or regularly pat ourselves on the back for our achievements, it's important that what we do... matters."
+              },
+              {
+                "id": "8",
+                "type": "par",
+                "content": "<em>Connection</em>\n\nAka love, aka romance, aka family, aka friends, aka community, aka pets, aka the relationship with yourself\n\nConnection between us, with our beloved pets, with ourselves, and even with nature is a fundamental need that transcends cultural, social, and individual boundaries."
+              },
+              {
+                "id": "9",
+                "type": "par",
+                "content": "<em>Connection (cont.)</em>\n\nIt goes beyond love — though vitally important in and of itself — and includes belonging to meaningful relationships of any type...\n\n... which, in turn, nutures our emotional well-being."
+              },
+              {
+                "id": "10",
+                "type": "par",
+                "content": "<em>Growing</em>\n\nAka progress, aka development, aka promotions, aka maturations, aka expansion, aka learning, aka experiencing, aka building skillsets.\n\nWhether or not its overplayed, the phrase,\"if it's not Growing, it's dying\", is a fact of life."
+              },
+              {
+                "id": "11",
+                "type": "par",
+                "content": "<em>Growing (cont.)</em>\n\nWhether we're looking for a promotion or a raise; to be stronger, faster, better; to learn more; to achieve more; to have more; to do more; or, to be more; growing plays a crucial role in human existence.\n\nWe build, we expand, we seek more... it's who we are."
+              },
+              {
+                "id": "12",
+                "type": "par",
+                "content": "<em>Contribution</em>\n\nAka giving, aka sharing, aka being a part of something bigger than ourselves, aka teaching, aka coaching, aka making a difference.\n\nWe all contribute: our work serves our society; we take care of our family and friends; we give gifts on holidays..."
+              },
+              {
+                "id": "13",
+                "type": "par",
+                "content": "<em>Contribution (cont.)</em>\n\n... but, it goes beyond just our personal spheres.\n\nWe also have an opportunity to contribute to people we don't know, to the greater good, and to the happiness, health, and well-being of the world as a whole."
+              }
+            ],
+            "topicQuestion": "Thinking about a challenge I've faced recently, how could a better understanding of my own human needs help me navigate this challenge more effectively?",
+            "topicQuestionPrompt": "Which need(s) played / plays role? How?",
+            "link": "",
+            "linkText": ""
+          },
+          {
+            "id": 3,
+            "topicName": "Intrinsic Influences",
+            "topicUrl": "II",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "As we turn our gaze towards how these needs impact our individual and collective lives, let's also take a quick look at how they interconnect, give birth to countless subsets, and weave the complex web of reasons that shape our lives."
+              },
+              {
+                "id": "2",
+                "type": "par",
+                "content": "For example, the need for certainty can create a child subset of 'financial security' (when the need is met), 'financial worry' (when the need may not be met), and 'financial burden' (when the need is not met).\n\nAnd, to help us meet our need for certainty as it relates to finances, we may 'seek a promotion or raise' (Growing), 'take on additional employment' (Variety), or even 'take a loan' (Connection)."
+              },
+              {
+                "id": "3",
+                "type": "par",
+                "content": "Romantic relationships (Connection) provide a prime example for how every need is interconnected:\n\nWe seek a stable relationship where we know the other person will be there for us when we need them (Certainty)...\n\nWe want to try new things together, go new places together, or even — in some cases — explore other partners (Variety)..."
+              },
+              {
+                "id": "4",
+                "type": "par",
+                "content": "We want to know that we're special and important in the eyes of our partner (Relevance)...\n\nWe want to learn more about them — or, at least have them learn more about us and what we like / don't like (Growing)...\n\nAnd, we want to give and / or be given gifts, attention, time, stuff, etc etc (Contribution)"
+              },
+              {
+                "id": "5",
+                "type": "par",
+                "content": "There's little doubt that each of these needs plays a role in our individual and collective lives.\n\nAnd, their interplay and interconnectedness — with unlimited combinations — are what create the vast number of decisions, attitudes, personalities, behaviors, moods, actions, and more."
+              },
+              {
+                "id": "6",
+                "type": "par",
+                "content": "<em>Thinking about your own life, what interconnectness have these needs shown as it relates to your family or household?</em>\n\nNo doubt, more than one of these needs plays a role for you..."
+              },
+              {
+                "id": "7",
+                "type": "par",
+                "content": "<em>Do you give lots of your time and energy (Contribution)?</em>\n\n<em>Do you lead by example (Relevance)?</em>\n\n<em>Do you play games, go on trips, try different foods together (Variety)?</em>"
+              },
+              {
+                "id": "8",
+                "type": "par",
+                "content": "<em>How about stability in the household (Certainty)?</em>\n\n<em>Do you learn new things together or about each other (Growing)?</em>"
+              },
+              {
+                "id": "8",
+                "type": "par",
+                "content": "As we wrap up this section of the course, it's important for us to note that there's no place for oppressive judgement about how these needs play a role in our life or in the life of someone else.\n\nWe're all living our lives and doing what we can with what we know.\n\nThe key is to learn where we can improve, where we're doing well, and on what we may want to focus our attention."
+              }
+            ],
+            "topicQuestion": "Using my current understanding of these needs, which of these have played a role in a recent decision I've made or action I've taken?",
+            "topicQuestionPrompt": "What inner influences are affecting my response and reaction to external factors?",
+            "link": "",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "section": "Harmony in Hierarchy",
+        "sectionUrl": "sakjdfplksadfjalkdfj",
+        "sectionLaunch": "Launched",
+        "about": {
+          "about1Subheadline": "",
+          "about1": "Blueprinting The Basics",
+          "about2Subheadline": "",
+          "about2": "Crafting The Core",
+          "about3Subheadline": "",
+          "about3": "Elevating Your Existence"
+        },
+        "topics": [
+          {
+            "id": 1,
+            "topicName": "Foundation Fusion",
+            "topicUrl": "",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "Blueprinting The Basics"
+              }
+            ],
+            "topicQuestion": "",
+            "topicQuestionPrompt": "",
+            "link": "",
+            "linkText": ""
+          },
+          {
+            "id": 2,
+            "topicName": "Prioritizing Passions",
+            "topicUrl": "",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "Crafting The Core"
+              }
+            ],
+            "topicQuestion": "",
+            "topicQuestionPrompt": "",
+            "link": "",
+            "linkText": ""
+          },
+          {
+            "id": 3,
+            "topicName": "Personal Polyphony",
+            " ": "",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "Elevating Your Existence"
+              }
+            ],
+            "topicQuestion": "",
+            "topicQuestionPrompt": "",
+            "link": "",
+            "linkText": ""
+          }
+        ]
+      }
+    ]
+  }
+}

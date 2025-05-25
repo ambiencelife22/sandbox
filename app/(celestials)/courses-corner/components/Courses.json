@@ -1,0 +1,68 @@
+{
+  "Course": {
+    "id": 1,
+    "name": "Course 1",
+    "urlParam": "/c1",
+    "urlCourse": "xC/c1",
+    "shortDescrip": "Ignite The Power Of The Human Needs, Unleash Your Potential",
+    "medDescrip1": "Descrip1",
+    "medDescrip2": "Descrip2",
+    "medDescrip3": "Descrip3",
+    "medDescrip4": "Descrip4",
+    "about": {
+      "about1": "about1",
+      "about2": "about2",
+      "about3": "about3"
+    },
+    "sections": [
+      {
+        "id": 1,
+        "section": "Section 1",
+        "sectionUrl": "intro",
+        "sectionLaunch": "Launched",
+        "about": {
+          "about1Subheadline": "",
+          "about1": "About 1",
+          "about2Subheadline": "",
+          "about2": "About 2",
+          "about3Subheadline": "",
+          "about3": "About 3"
+        },
+        "topics": [
+          {
+            "id": 1,
+            "topicName": "Topic 1",
+            "topicUrl": "t1",
+            "paragraphs": [
+              {
+                "id": "1",
+                "type": "par",
+                "content": "content"
+              },
+              {
+                "id": "1",
+                "type": "parWithVideo",
+                "content": {
+                  "pContent": "content",
+                  "url": "video_url.mp4",
+                  "alt": "Video Description"
+                  }
+              },
+              {
+                "id": "1",
+                "type": "parWithImage",
+                "pContent": "content",
+                "url": "image_url.jpg",
+                "alt": "Image Description"
+              }
+            ],
+            "topicQuestion": "topicQuestion",
+            "topicQuestionPrompt": "topicQuestionPrompt",
+            "link": "link",
+            "linkText": "linkText"
+          }
+        ]
+      }
+    ]
+  }
+}
