@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
@@ -33,7 +34,7 @@ const Card = React.forwardRef<
     className={cn(
       "relative rounded-3xl border border-gray-200 bg-gradient-to-br from-white via-neutral-50 to-gray-100 text-gray-800 shadow-md p-6",
       "hover:shadow-2xl hover:border-black hover:ring-2 hover:ring-black hover:scale-[1.02]",
-      "transition-all duration-300 ease-in-out backdrop-blur-sm",
+      "transition-all duration-300 ease-in-out",
       className
     )}
     {...props}
