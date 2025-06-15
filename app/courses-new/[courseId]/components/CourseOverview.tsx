@@ -5,7 +5,7 @@ import path from "path";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import '../../../../styles/globals.css'
+import "../../../../styles/globals.css";
 
 interface CourseOverviewProps {
   courseId: string;
@@ -49,8 +49,7 @@ export default async function CourseOverview({
       //   </div>
 
       <section className="max-w-6xl mx-auto px-8 py-12 bg-white border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
-
-      {/* // <section className="relative max-w-6xl px-6 pt-6 pb-10 min-h-[350px] border border-gray-300 rounded-tl-[4rem] rounded-br-[4rem] shadow-md flex flex-col "> */}
+        {/* // <section className="relative max-w-6xl px-6 pt-6 pb-10 min-h-[350px] border border-gray-300 rounded-tl-[4rem] rounded-br-[4rem] shadow-md flex flex-col "> */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Title + Tagline */}
           <div className="space-y-2">
@@ -84,7 +83,7 @@ export default async function CourseOverview({
             ))}
           </TabsList>
 
-          {/* {activeModules.map((module: any) => (
+          {activeModules.map((module: any) => (
             <TabsContent key={module.id} value={module.id}>
               <Card className="mt-4">
                 <CardContent className="space-y-4">
@@ -99,7 +98,7 @@ export default async function CourseOverview({
                 </CardContent>
               </Card>
             </TabsContent>
-          ))} */}
+          ))}
 
           {/* <TabsContent key={module.id} value={module.id}>
   <div className="mt-6">
