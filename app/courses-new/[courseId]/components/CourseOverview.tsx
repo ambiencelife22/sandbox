@@ -1,18 +1,19 @@
-/* [courseId]/CourseOverview.tsx */
+// app/courses-new/[courseId]/CourseOverview.tsx
 
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 import "../../../../styles/globals.css";
+import GradientBackground from "./GradientBackground"; // Adjust import path
 
 interface CourseOverviewProps {
   courseId: string;
+  tab: string;
 }
 
 export default async function CourseOverview({
   courseId,
+  tab,
 }: CourseOverviewProps) {
   const normalizedId = courseId
     .replace(/-([a-z])/g, (_, char) => char.toUpperCase())
@@ -29,116 +30,109 @@ export default async function CourseOverview({
     const courseData = JSON.parse(fileContents);
     const modules = courseData.modules || [];
     const activeModules = modules.filter((m: any) => m.active !== "no");
-    const activeModule = activeModules[0]?.id || "";
+
+    const currentModule = activeModules.find((m: any) => m.id === tab) ||
+      activeModules[0] || {
+        title: "",
+        description: "",
+        id: "",
+      };
 
     return (
-      // <div className='p-6 max-w-5xl mx-auto'>
-      //   <div className='flex justify-between items-center mb-4'>
-      //     <h1 className='text-3xl font-bold capitalize'>
-      //       {courseId.replace(/-/g, ' ')} Course
-      //     </h1>
+      <div className="relative min-h-screen w-full bg-black text-white font-sans">
+        <GradientBackground />
 
-      //     <Link
-      //       href={`/courses-new/${courseId}/review`}
-      //       className='print:hidden'
-      //     >
-      //       <span className='inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded'>
-      //         📘 Review Full Course
-      //       </span>
-      //     </Link>
-      //   </div>
-
-      <section className="max-w-6xl mx-auto px-8 py-12 bg-white border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
-        {/* // <section className="relative max-w-6xl px-6 pt-6 pb-10 min-h-[350px] border border-gray-300 rounded-tl-[4rem] rounded-br-[4rem] shadow-md flex flex-col "> */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          {/* Title + Tagline */}
-          <div className="space-y-2">
-            <h1 className="text-5xl font-extrabold tracking-tight leading-tight text-gray-900">
-              {courseId.replace(/-/g, " ")} Course
-            </h1>
-          </div>
-
-          {/* CTA Button */}
+        <div className="relative z-40 max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <h1 className="text-4xl font-extrabold tracking-tight capitalize">
+            {courseId.replace(/-/g, " ")} Course
+          </h1>
           <Link
             href={`/courses-new/${courseId}/review`}
             className="print:hidden"
           >
             <button
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full shadow-md 
-             bg-blue-600 hover:bg-blue-700 
-            text-white
-             transition"
+              className="relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full shadow-md text-white  border-transparent bg-transparent overflow-hidden group transition-all duration-300 ease-in-out"
+              style={{
+                borderImage:
+                  "linear-gradient(44deg, #520e63, #651279, #b221d2) 1",
+                borderImageSlice: 1,
+              }}
             >
-              📘 Review Full Course
+              <span className="absolute inset-0 bg-[linear-gradient(44deg,_#520e63,_#651279,_#b221d2)] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out z-0" />
+              <span className="relative z-10">📘 Review Full Course</span>
             </button>
           </Link>
         </div>
 
-        <Tabs defaultValue={activeModule}>
-          <TabsList className="flex overflow-x-auto whitespace-nowrap space-x-2 no-scrollbar">
-            {activeModules.map((module: any) => (
-              <TabsTrigger key={module.id} value={module.id}>
-                {module.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        <div className="relative z-40 flex items-center justify-center py-20">
+          <div
+            className="relative w-[800px] h-[800px] rounded-full shadow-[0_0_40px_rgba(0,0,0,0.3)] transition-transform duration-500 hover:scale-[1.03]"
+            style={{
+              background: "linear-gradient(44deg, #520e63, #651279, #b221d2)",
+            }}
+          >
+            <div
+              className="absolute w-[420px] h-[420px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  rounded-full z-[1]"
+              style={{
+                background: "linear-gradient(44deg, #520e63, #651279, #b221d2)",
+              }}
+            />
 
-          {activeModules.map((module: any) => (
-            <TabsContent key={module.id} value={module.id}>
-              <Card className="mt-4">
-                <CardContent className="space-y-4">
-                  <h2 className="text-xl font-semibold">{module.title}</h2>
-                  <p>{module.description}</p>
-                  <Link
-                    className="inline-block mt-2 text-blue-600 underline"
-                    href={`/courses-new/${courseId}/module/${module.id}`}
-                  >
-                    Start Module →
-                  </Link>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          ))}
-
-          {/* <TabsContent key={module.id} value={module.id}>
-  <div className="mt-6">
-    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 transition hover:shadow-2xl p-6">
-      <h2 className="text-2xl font-bold text-gray-800">{module.title}</h2>
-      <p className="text-gray-600 mt-2 leading-relaxed">
-        asd
-      </p>
-      <Link
-        href={`/courses-new/${courseId}/module/${module.id}`}
-        className="inline-block mt-4 text-indigo-600 font-semibold hover:text-indigo-800 underline transition-colors duration-200"
-      >
-        hehe
-      </Link>
-    </div>
-  </div>
-</TabsContent> */}
-
-          <TabsContent key={module.id} value={module.id}>
-            <div className="mt-10">
-              <div className="relative overflow-hidden rounded-3xl p-8 shadow-2xl border border-white/20 bg-white/5 backdrop-blur-lg transition-transform duration-300 hover:scale-[1.02]">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 opacity-20 blur-3xl animate-pulse z-0" />
-                <div className="relative z-10">
-                  <h2 className="text-4xl font-extrabold text-white drop-shadow-md">
-                    {module.title}
-                  </h2>
-                  <p className="mt-4 text-lg text-gray-200">asd</p>
-                  <Link
-                    href={`/courses-new/${courseId}/module/${module.id}`}
-                    className="inline-block mt-6 bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-pink-500/50 transition-all duration-300"
-                  >
-                    hehe
-                  </Link>
-                </div>
-              </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white w-[70%] z-[2]">
+              <h3 className="text-[28px] font-semibold whitespace-pre-line leading-snug m-0">
+                {currentModule.title}
+              </h3>
+              <p className="text-[16px] mt-2 opacity-80">
+                {currentModule.description}
+              </p>
+              <Link
+                href={`/courses-new/${courseId}/module/${currentModule.id}`}
+                className="inline-block mt-4 text-white underline hover:text-blue-200 transition-all"
+              >
+                Start Module →
+              </Link>
             </div>
-          </TabsContent>
-        </Tabs>
-        {/* </div> */}
-      </section>
+
+            {activeModules.map((m: any, i: number) => {
+              const total = activeModules.length;
+              const angle = (360 / total) * i;
+              const isActive = m.id === currentModule.id;
+
+              return (
+                <Link
+                  key={m.id}
+                  href={`/courses-new/${courseId}?tab=${m.id}`}
+                  className="absolute w-1/2 h-1/2 top-0 left-1/2 origin-bottom-left z-0"
+                  style={{
+                    transform: `rotate(${angle}deg)`,
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <div
+                    className={`w-full h-full flex items-center justify-center transition-all duration-300 ${
+                      isActive
+                        ? "bg-white/30 text-[#0A29B3]"
+                        : "hover:bg-white/25"
+                    } p-2`}
+                  >
+                    <div
+                      className="text-white text-[18px] text-center leading-snug break-words"
+                      style={{
+                        transform: `rotate(-${angle}deg)`,
+                        maxWidth: "100px",
+                        wordBreak: "break-word",
+                        whiteSpace: "normal",
+                      }}
+                    >
+                      {m.title}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     );
   } catch (error) {
     console.error("CourseOverview load error:", error);

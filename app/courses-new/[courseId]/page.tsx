@@ -1,9 +1,12 @@
-/* [courseId]/page.tsx */
-import '@/app/app.css'
-import CourseOverview from './components/CourseOverview'
+import CourseOverview from "./components/CourseOverview";
 
-export default async function Page(props: any) {
-  const { courseId } = props.params
+interface Props {
+  params: { courseId: string };
+  searchParams: { tab?: string };
+}
 
-  return await CourseOverview({ courseId })
+export default function Page({ params, searchParams }: Props) {
+  return (
+    <CourseOverview courseId={params.courseId} tab={searchParams.tab || ""} />
+  );
 }
